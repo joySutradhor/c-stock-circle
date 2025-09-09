@@ -8,6 +8,7 @@ import CTA from '../_components/Home/CTA/CTA'
 import Testimonials from '../_components/Home/Testimonial/Testimonials'
 import FinancialServicesGrid from '../_components/Home/Blog/FinancialServicesGrid'
 import About from '../_components/Home/About/About'
+import MissionVission from '../_components/MissionVission/MissionVission'
 
 export default function page () {
   return (
@@ -24,6 +25,9 @@ export default function page () {
         <About />
       </div>
       <div className='section__gap section__top'>
+        <MissionVission />
+      </div>
+      <div className='section__gap section__top'>
         <StudentWorks />
       </div>
       <div className=' section__top'>
@@ -31,9 +35,6 @@ export default function page () {
       </div>
       <div className='section__gap section__top'>
         <Testimonials />
-      </div>
-      <div className='section__gap section__top'>
-        <FinancialServicesGrid />
       </div>
     </div>
   )

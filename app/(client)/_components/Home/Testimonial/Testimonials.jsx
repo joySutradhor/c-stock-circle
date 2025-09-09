@@ -150,7 +150,6 @@ export default function Testimonials () {
           <Tooltip
             icon={IoIosPeople}
             text='Testimonial'
-            link='/'
             headerText='What Student '
             colorText='Say About Us'
             des='Discover our comprehensive financial services, expert investment strategies, and personalized wealth management solutions designed to help you achieve your financial goals and secure your future.'
