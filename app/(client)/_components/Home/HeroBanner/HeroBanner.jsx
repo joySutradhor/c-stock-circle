@@ -25,7 +25,7 @@ export default function HeroBanner () {
             <HeroTooltip
               icon={FaUserGraduate}
               text='Live Courses'
-              link='/courses'
+              
               headerText='Learn From Industry Experts'
               colorText=' Anytime, Anywhere'
               des='Join our interactive live classes and access recorded sessions, guided projects, and personalized mentorship. Gain real-world skills and accelerate your career with courses designed for learners at every level.'

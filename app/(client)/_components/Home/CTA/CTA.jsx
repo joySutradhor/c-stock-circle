@@ -40,7 +40,6 @@ export default function CTA () {
           <Tooltip
             icon={FaTrophy}
             text='Our Records'
-            link='/blog'
             headerText='Our Awesome '
             colorText = "Records"
             des='Discover our comprehensive financial services, expert investment strategies, and personalized wealth management solutions designed to help you achieve your financial goals and secure your future.'

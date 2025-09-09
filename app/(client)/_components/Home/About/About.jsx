@@ -32,7 +32,6 @@ export default function About () {
           <Tooltip
             icon={FaUserAlt}
             text='Our Company'
-            link='/about'
             headerText='Leading Financial Solutions '
             colorText = "for Your Success"
             // des='Discover our comprehensive financial services, expert investment strategies, and personalized wealth management solutions designed to help you achieve your financial goals and secure your future.'

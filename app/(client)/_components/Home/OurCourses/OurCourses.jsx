@@ -17,7 +17,6 @@ export default function OurCourses () {
         <Tooltip
           icon={BsStack}
           text='Our courses'
-          link='/courses'
           headerText='Master Financial '
           colorText='Markets'
           des='Learn from industry professionals with our comprehensive trading courses, investment strategies, and financial education programs designed to build your expertise and confidence in the markets.'

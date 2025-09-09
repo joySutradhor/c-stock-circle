@@ -18,7 +18,6 @@ const MarketUpdate = () => {
         <Tooltip
           icon={SlGraph}
           text='Market Updates'
-          link='/blog'
           headerText='Our Market Updates '
           colorText='for Your Success'
           des='Discover our comprehensive financial services, expert investment strategies, and personalized wealth management solutions designed to help you achieve your financial goals and secure your future.'
