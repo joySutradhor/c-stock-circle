@@ -7,6 +7,7 @@ import HeroTooltip from '../../utilities/HeroTooltip'
 import { MdArrowOutward } from 'react-icons/md'
 import { IoArrowForwardSharp } from 'react-icons/io5'
 import Marquee from 'react-fast-marquee'
+import Link from 'next/link'
 
 export default function HeroBanner () {
   const images = [
@@ -25,25 +26,28 @@ export default function HeroBanner () {
             <HeroTooltip
               icon={FaUserGraduate}
               text='Live Courses'
-              
               headerText='Learn From Industry Experts'
               colorText=' Anytime, Anywhere'
               des='Join our interactive live classes and access recorded sessions, guided projects, and personalized mentorship. Gain real-world skills and accelerate your career with courses designed for learners at every level.'
             />
             <div>
               <div className='flex gap-x-5 items-center my-10'>
-                <button className='inline-flex items-center bg-green-400 text-white gap-x-2 btn__style cursor-pointer group '>
-                  Learn More
-                  <span>
-                    <IoArrowForwardSharp />
-                  </span>{' '}
-                </button>
-                <button className='inline-flex items-center  gap-x-2 btn__style cursor-pointer group '>
-                  Contact Us
-                  <span>
-                    <MdArrowOutward />
-                  </span>{' '}
-                </button>
+                <Link href='/about'>
+                  <button className='inline-flex items-center bg-green-400 text-white gap-x-2 btn__style cursor-pointer group '>
+                    Learn More
+                    <span>
+                      <IoArrowForwardSharp />
+                    </span>{' '}
+                  </button>
+                </Link>
+                <Link href='/contact'>
+                  <button className='inline-flex items-center  gap-x-2 btn__style cursor-pointer group '>
+                    Contact Us
+                    <span>
+                      <MdArrowOutward />
+                    </span>{' '}
+                  </button>
+                </Link>
               </div>
             </div>
 
@@ -106,7 +110,7 @@ export default function HeroBanner () {
       </div>
 
       <div className='max-w-7xl mx-auto py-5 '>
-        <Marquee  >
+        <Marquee>
           1000+ Live Batches Completed • 50,000+ Students Trained • ACCA, FRM,
           CFA and Investment Banking Training • 4.8/5 Average Rating
         </Marquee>
