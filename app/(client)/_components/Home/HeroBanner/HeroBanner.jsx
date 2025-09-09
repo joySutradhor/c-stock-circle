@@ -75,11 +75,11 @@ export default function HeroBanner () {
                 height={1000}
                 width={1000}
                 alt='hero image'
-                src='https://pub-338f0345bf6c431fbd5bd8d3f2174595.r2.dev/stock-hero.png'
-                className='object-contain h-[76vh] '
+                src='https://pub-338f0345bf6c431fbd5bd8d3f2174595.r2.dev/hero-final.png'
+                className='object-cover h-[85vh] '
               />
             </div>
-            <div className='absolute top-2/3 right-0 -translate-y-1/2'>
+            <div className='absolute top-2/3 right-[5%] -translate-y-1/2'>
               <div className='backdrop-blur-md bg-white/10  shadow-xl rounded-2xl p-6 w-72 text-white'>
                 {/* Icon */}
                 {/* <div className='flex items-center justify-center w-12 h-12 rounded-full bg-green-400/50 text-white mb-4'>

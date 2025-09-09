@@ -10,7 +10,7 @@ export default function page () {
         text='Contact Us'
         Icon={MdOutlineSupportAgent}
         breadcrumb='home/contact'
-        bannerImg="https://pub-338f0345bf6c431fbd5bd8d3f2174595.r2.dev/page-banner/support.jpg"
+        bannerImg="https://pub-338f0345bf6c431fbd5bd8d3f2174595.r2.dev/cal-support.jpg"
       />
 
       {/* contact form  */}

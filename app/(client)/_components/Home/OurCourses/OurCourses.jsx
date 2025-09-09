@@ -79,11 +79,11 @@ export default function OurCourses () {
 
         <div className='hidden xl:block'>
           <Image
-            src='https://pub-338f0345bf6c431fbd5bd8d3f2174595.r2.dev/course-image.png'
+            src='https://pub-338f0345bf6c431fbd5bd8d3f2174595.r2.dev/woman-Photoroom.png'
             height={1000}
             width={1000}
             alt='course image'
-            className=' h-auto'
+            className=' w-full object-cover h-auto scale-110'
           />
         </div>
 
