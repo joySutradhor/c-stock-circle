@@ -181,7 +181,9 @@ const Footer = () => {
                   <MdMarkEmailUnread className='text-gray-600 text-lg' />
                   <span className='sub__para'>info@gmail.com</span>
                 </div>
+              </div>
 
+              <div className='fixed__footer__card_parent'>
                 {/* WhatsApp Button */}
                 <div>
                   <a
@@ -193,13 +195,6 @@ const Footer = () => {
                     <FaWhatsapp className='text-lg text-gray-600' />
                     <span className='sub__para'>WhatsApp Us</span>
                   </a>
-                </div>
-              </div>
-
-              <div className='fixed__footer__card_parent'>
-                <div className='footer__icons__parent'>
-                  <FaFacebook className='text-gray-600 text-lg' />
-                  <span className='sub__para'>Facebook</span>
                 </div>
                 <div className='footer__icons__parent'>
                   <FaInstagram className='text-gray-600 text-lg' />

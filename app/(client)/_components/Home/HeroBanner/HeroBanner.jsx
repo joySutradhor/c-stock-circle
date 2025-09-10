@@ -33,7 +33,7 @@ export default function HeroBanner () {
             <div>
               <div className='flex gap-x-5 items-center my-10'>
                 <Link href='/about'>
-                  <button className='inline-flex items-center bg-green-400 text-white gap-x-2 btn__style cursor-pointer group '>
+                  <button className='inline-flex items-center bg-blue-500 text-white gap-x-2 btn__style cursor-pointer group '>
                     Learn More
                     <span>
                       <IoArrowForwardSharp />
@@ -109,11 +109,13 @@ export default function HeroBanner () {
         </div>
       </div>
 
-      <div className='max-w-7xl mx-auto py-5 '>
-        <Marquee>
-          1000+ Live Batches Completed • 50,000+ Students Trained • ACCA, FRM,
-          CFA and Investment Banking Training • 4.8/5 Average Rating
-        </Marquee>
+      <div className='   bg-gradient-to-l from-green-300 via-blue-500 to-green-300'>
+        <div className='text-white max-w-7xl mx-auto  py-5 '>
+          <Marquee>
+            1000+ Live Batches Completed • 50,000+ Students Trained • ACCA, FRM,
+            CFA and Investment Banking Training • 4.8/5 Average Rating
+          </Marquee>
+        </div>
       </div>
     </div>
   )

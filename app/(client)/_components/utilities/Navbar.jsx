@@ -27,9 +27,10 @@ export default function Navbar () {
         { name: 'Risk Management', path: '/risk-management' }
       ]
     },
+    { name: 'Market Updates', path: '/market-update' },
     { name: 'About Us', path: '/about' },
-    { name: 'Market Updates', path: '/market-update' }
-    // { name: 'Faq', path: '/faq' }
+
+    { name: 'Blog', path: '/blog' }
   ]
 
   const toggleMenu = name => {
@@ -40,19 +41,20 @@ export default function Navbar () {
     <div className='fixed top-0 w-full gradient__color z-50'>
       <nav className='py-[2vh] max-w-7xl mx-auto flex justify-between items-center px-4 lg:px-0'>
         {/* Logo */}
-        <Link href="/">
+        <Link href='/'>
           <div>
             <Image
               height={1000}
               width={1000}
               alt='logo'
               src='https://pub-338f0345bf6c431fbd5bd8d3f2174595.r2.dev/stock-logo.png'
-              className='object-cover w-48 h-auto  '
+              className='object-cover w-56 h-auto  '
             />
           </div>
         </Link>
 
-        {/* Menu */}
+       <div className='flex items-center gap-x-16 '>
+         {/* Menu */}
         <div className='relative'>
           <ul className='flex gap-x-10 items-center  '>
             {menus.map(menu => {
@@ -120,6 +122,7 @@ export default function Navbar () {
             </button>
           </Link>
         </div>
+       </div>
       </nav>
     </div>
   )

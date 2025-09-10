@@ -16,7 +16,7 @@ export default function HeroTooltip ({
       <div>
         <Link href={link || '#'}>
           <button className='inline-flex items-center gap-x-2 tooltip__btn__style cursor-pointer'>
-            {Icon && <Icon className='text-base text-green-400' />}
+            {Icon && <Icon className='text-base text-white' />}
             {text && <span><span>{text}</span> </span>}
           </button>
         </Link>

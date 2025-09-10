@@ -10,11 +10,9 @@
   display: none;
 }
 
-
-
 /* base styles  */
 .gradient__color {
-  @apply bg-gradient-to-b border-b-[1px] border-black/5 from-green-50 via-blue-50 to-white
+  @apply bg-gradient-to-b border-b-[1px] border-black/5 from-green-50 via-blue-50 to-white;
 }
 .section__top {
   @apply mt-[10vh] lg:mt-[15vh];
@@ -35,8 +33,8 @@
 .card__border {
   @apply border border-black/10;
 }
-.hero__title{
-  @apply text-4xl xl:text-6xl text-black/80  font-extrabold
+.hero__title {
+  @apply text-4xl xl:text-6xl text-black/80  font-extrabold;
 }
 .main__title {
   @apply text-5xl xl:text-7xl text-black/80  font-extrabold;
@@ -54,11 +52,11 @@
 }
 
 .sub__para {
-  @apply  text-base lg:text-lg text-black/80;
+  @apply text-base lg:text-lg text-black/80;
 }
 
 .base__para {
-  @apply text-sm lg:text-base text-black/60 ;
+  @apply text-sm lg:text-base text-black/60;
 }
 
 .base__list__para {
@@ -66,26 +64,23 @@
 }
 
 .tooltip__btn__style {
-  @apply border border-black/10 rounded-full  py-1.5 px-4 font-medium text-sm;
+  @apply bg-blue-500  text-white rounded-full  py-1.5 px-4 font-medium text-sm;
 }
 .btn__style {
   @apply relative border border-black/10 rounded-full py-2 px-4 font-medium text-sm transition-all ease-in-out duration-500 overflow-hidden;
 }
 
 .btn__style {
-  @apply relative border hover:bg-green-400 hover:text-white hover:border-green-400 border-black/10 rounded-full py-1.5 px-4 font-medium text-sm transition-all ease-in-out duration-500 overflow-hidden;
+  @apply relative border hover:bg-blue-500 hover:text-white hover:border-blue-200 border-black/10 rounded-full py-1.5 px-4 font-medium text-sm transition-all ease-in-out duration-500 overflow-hidden;
 }
 
-
-
 .arrow__color {
-  @apply text-green-400;
+  @apply text-blue-500;
 }
 
 /* common styles  */
 
 /* navbar styles */
-
 
 /* about us secontion styles */
 
@@ -118,76 +113,76 @@
 }
 
 /* Cta styles  */
-.cta__container{
-  @apply max-w-7xl mx-auto grid lg:grid-cols-2 gap-x-16 items-center py-16 px-5 md:px-12 lg:px-16 xl:px-0
+.cta__container {
+  @apply max-w-7xl mx-auto grid lg:grid-cols-2 gap-x-16 items-center py-16 px-5 md:px-12 lg:px-16 xl:px-0;
 }
-.cta__card__parent{
-  @apply grid grid-cols-2  gap-3 lg:gap-5 mt-5 lg:mt-0
+.cta__card__parent {
+  @apply grid grid-cols-2  gap-3 lg:gap-5 mt-5 lg:mt-0;
 }
 
 /* student placement styles */
-.st__works__row__parent{
-  @apply w-40 h-auto flex justify-center items-center overflow-hidden rounded border border-black/10 hover:border-green-400 transition-all ease-in-out duration-700 mx-2
+.st__works__row__parent {
+  @apply w-40 h-auto flex justify-center items-center overflow-hidden rounded border border-black/10 hover:border-green-400 transition-all ease-in-out duration-700 mx-2;
 }
-.st__works__row__img{
-  @apply  object-cover  hover:scale-110 transition-all ease-in-out duration-700   p-2 grayscale-100 hover:grayscale-0 mx-2 cursor-pointer
+.st__works__row__img {
+  @apply object-cover  hover:scale-110 transition-all ease-in-out duration-700   p-2 grayscale-100 hover:grayscale-0 mx-2 cursor-pointer;
 }
 
 /* testimonial styels */
 
 .tes__container {
-  @apply flex flex-nowrap gap-4 mb-8 max-w-4xl overflow-x-auto mx-auto pr-2 
+  @apply flex flex-nowrap gap-4 mb-8 max-w-4xl overflow-x-auto mx-auto pr-2;
 }
 
-.tes__content__parent{
-  @apply grid md:grid-cols-2 gap-6 max-w-4xl mx-auto
+.tes__content__parent {
+  @apply grid md:grid-cols-2 gap-6 max-w-4xl mx-auto;
 }
 
-.tes__tab__parent{
-  @apply flex items-center gap-x-2 px-4 py-2 shrink-0 rounded-md text-sm font-medium
+.tes__tab__parent {
+  @apply flex items-center gap-x-2 px-4 py-2 shrink-0 rounded-md text-sm font-medium;
 }
 
 .tes__card__parent {
-  @apply bg-white p-6 rounded-md  
+  @apply bg-white p-6 rounded-md;
 }
 
 /* blogs style */
-.blog__container{
-  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5
+.blog__container {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5;
 }
 /* footer */
 
 .footer__gradient__color {
-  @apply bg-gradient-to-r border-b-[1px] border-black/5 from-green-50 via-blue-50 to-white
+  @apply bg-gradient-to-r border-b-[1px] border-black/5 from-green-50 via-blue-50 to-white;
 }
 
-.footer__container{
-  @apply bg-green-50   text-black/80 pt-12  pb-10 xl:pb-20 mt-[10vh] lg:mt-[15vh]
+.footer__container {
+  @apply bg-green-50   text-black/80 pt-12  pb-10 xl:pb-20 mt-[10vh] lg:mt-[15vh];
 }
 
-.footer__parent{
-  @apply max-w-7xl mx-auto px-5 md:px-12 lg:px-16 xl:px-0
+.footer__parent {
+  @apply max-w-7xl mx-auto px-5 md:px-12 lg:px-16 xl:px-0;
 }
 
-.footer__child__parent{
-  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-10 xl:gap-20
+.footer__child__parent {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-10 xl:gap-20;
 }
 
-.footer__icons__parent{
-  @apply flex items-center gap-x-1
+.footer__icons__parent {
+  @apply flex items-center gap-x-1;
 }
 
-.footer__menu{
-  @apply text-xl font-semibold mb-3 lg:mb-6 text-black/80
+.footer__menu {
+  @apply text-xl font-semibold mb-3 lg:mb-6 text-black/80;
 }
 
-.footer__para{
-  @apply text-black/80 hover:underline underline-offset-4 transition text-base 
+.footer__para {
+  @apply text-black/80 hover:underline underline-offset-4 transition text-base;
 }
-.footer__last__col__icon__parent{
-  @apply flex items-center space-x-3
+.footer__last__col__icon__parent {
+  @apply flex items-center space-x-3;
 }
 
-.fixed__footer__card_parent{
-  @apply flex gap-x-10 items-center
+.fixed__footer__card_parent {
+  @apply flex gap-x-10 items-center;
 }
