@@ -15,7 +15,7 @@ export default function ContactForm () {
             Fill in this form or send us an e-mail at{' '}
             <a
               href='mailto:info@stock.com'
-              className='text-green-400 hover:underline'
+              className='text-[#2AA169] hover:underline'
             >
               info@stock.com
             </a>{' '}
@@ -53,18 +53,18 @@ export default function ContactForm () {
               <input
                 type='text'
                 placeholder='Name'
-                className='w-full border border-green-400 rounded px-3 py-2 focus:outline-none '
+                className='w-full border border-[#2AA169] rounded px-3 py-2 focus:outline-none '
               />
               <input
                 type='email'
                 placeholder='Email'
-                className='w-full border border-green-400 rounded px-3 py-2 focus:outline-none '
+                className='w-full border border-[#2AA169] rounded px-3 py-2 focus:outline-none '
               />
             </div>
 
             {/* Row 2 */}
             <div className='grid grid-cols-1 sm:grid-cols-3 gap-4'>
-              <select className='border border-green-400 rounded px-3 py-2 focus:outline-none '>
+              <select className='border border-[#2AA169] rounded px-3 py-2 focus:outline-none '>
                 <option>India (+91)</option>
                 <option>USA (+1)</option>
                 <option>UK (+44)</option>
@@ -72,9 +72,9 @@ export default function ContactForm () {
               <input
                 type='text'
                 placeholder='Phone Number'
-                className='w-full border border-green-400 rounded px-3 py-2 focus:outline-none '
+                className='w-full border border-[#2AA169] rounded px-3 py-2 focus:outline-none '
               />
-              <select className='border border-green-400 rounded px-3 py-2 focus:outline-none '>
+              <select className='border border-[#2AA169] rounded px-3 py-2 focus:outline-none '>
                 <option>Select Course</option>
                 <option>CFA</option>
                 <option>FRM</option>
@@ -86,13 +86,13 @@ export default function ContactForm () {
             <textarea
               rows='4'
               placeholder='Message'
-              className='w-full border border-green-400 rounded px-3 py-2 focus:outline-none '
+              className='w-full border border-[#2AA169] rounded px-3 py-2 focus:outline-none '
             ></textarea>
 
             {/* Button */}
             <button
               type='submit'
-              className='w-full bg-green-400 text-white font-medium py-3 rounded hover:bg-green-600 transition'
+              className='w-full bg-[#2AA169] text-white font-medium py-3 rounded hover:bg-green-600 transition'
             >
               Send Message
             </button>

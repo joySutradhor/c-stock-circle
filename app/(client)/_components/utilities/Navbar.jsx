@@ -53,76 +53,76 @@ export default function Navbar () {
           </div>
         </Link>
 
-       <div className='flex items-center gap-x-16 '>
-         {/* Menu */}
-        <div className='relative'>
-          <ul className='flex gap-x-10 items-center  '>
-            {menus.map(menu => {
-              const isActive = pathname === menu.path
-              return (
-                <li key={menu.name} className='relative font-medium text-sm'>
-                  <div>
-                    {menu.subMenu ? (
-                      <button
-                        onClick={() => toggleMenu(menu.name)}
-                        className={`flex items-center font-medium cursor-pointer gap-x-1 hover:text-green-500 transition-colors ${
-                          openMenu === menu.name || isActive
-                            ? 'text-green-500'
-                            : 'text-black'
-                        }`}
-                      >
-                        {menu.name}
-                        <SlArrowDown
-                          className={`text-sm  transition-transform duration-300 ${
-                            openMenu === menu.name ? 'rotate-180' : 'rotate-0'
+        <div className='flex items-center gap-x-16 '>
+          {/* Menu */}
+          <div className='relative'>
+            <ul className='flex gap-x-10 items-center  '>
+              {menus.map(menu => {
+                const isActive = pathname === menu.path
+                return (
+                  <li key={menu.name} className='relative font-medium text-sm'>
+                    <div>
+                      {menu.subMenu ? (
+                        <button
+                          onClick={() => toggleMenu(menu.name)}
+                          className={`flex items-center font-medium cursor-pointer gap-x-1 hover:text-green-500 transition-colors ${
+                            openMenu === menu.name || isActive
+                              ? 'text-green-500'
+                              : 'text-black'
                           }`}
-                        />
-                      </button>
-                    ) : (
-                      <Link
-                        href={menu.path}
-                        className={`hover:text-green-500 transition-colors cursor-pointer ${
-                          isActive ? 'text-green-500' : 'text-black'
-                        }`}
-                      >
-                        {menu.name}
-                      </Link>
-                    )}
+                        >
+                          {menu.name}
+                          <SlArrowDown
+                            className={`text-sm  transition-transform duration-300 ${
+                              openMenu === menu.name ? 'rotate-180' : 'rotate-0'
+                            }`}
+                          />
+                        </button>
+                      ) : (
+                        <Link
+                          href={menu.path}
+                          className={`hover:text-green-500 transition-colors cursor-pointer ${
+                            isActive ? 'text-green-500' : 'text-black'
+                          }`}
+                        >
+                          {menu.name}
+                        </Link>
+                      )}
 
-                    {/* Dropdown */}
-                    {menu.subMenu && openMenu === menu.name && (
-                      <ul className='absolute top-full left-0 bg-white shadow-md rounded-md py-2 mt-3 w-48 z-50'>
-                        {menu.subMenu.map(sub => (
-                          <li key={sub.name}>
-                            <Link
-                              href={sub.path}
-                              className={`block px-4 py-2 text-sm text-black/80 hover:bg-green-100 hover:text-green-600 transition-colors ${
-                                pathname === sub.path ? 'text-green-500' : ''
-                              }`}
-                            >
-                              {sub.name}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-                  </div>
-                </li>
-              )
-            })}
-          </ul>
-        </div>
+                      {/* Dropdown */}
+                      {menu.subMenu && openMenu === menu.name && (
+                        <ul className='absolute top-full left-0 bg-white shadow-md rounded-md py-2 mt-3 w-48 z-50'>
+                          {menu.subMenu.map(sub => (
+                            <li key={sub.name}>
+                              <Link
+                                href={sub.path}
+                                className={`block px-4 py-2 text-sm text-black/80 hover:bg-green-100 hover:text-green-600 transition-colors ${
+                                  pathname === sub.path ? 'text-green-500' : ''
+                                }`}
+                              >
+                                {sub.name}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </div>
+                  </li>
+                )
+              })}
+            </ul>
+          </div>
 
-        {/* Contact Button */}
-        <div>
-          <Link href='/contact'>
-            <button className='inline-flex items-center gap-x-2 btn__style cursor-pointer group '>
-              <FaMailBulk className='text-base text-green-400  group-hover:text-white ' />
-              <span>Contact Us</span>
-            </button>
-          </Link>
+          {/* Contact Button */}
+          <div>
+            <Link href='/contact'>
+              <button className='inline-flex items-center gap-x-2 btn__style cursor-pointer group '>
+                <FaMailBulk className='text-base text-[#2AA169]  group-hover:text-white ' />
+                <span>Contact Us</span>
+              </button>
+            </Link>
+          </div>
         </div>
-       </div>
       </nav>
     </div>
   )

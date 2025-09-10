@@ -5,7 +5,6 @@ import Tooltip from '../../utilities/Tooltip'
 import { IoIosPeople } from 'react-icons/io'
 
 export default function Testimonials () {
-  
   const [activeTab, setActiveTab] = useState('Capsule')
 
   const scrollRef = useRef(null)
@@ -124,8 +123,6 @@ export default function Testimonials () {
     }
   }
 
-  
-
   const handleMouseDown = e => {
     setIsDown(true)
     setStartX(e.pageX - scrollRef.current.offsetLeft)
@@ -139,7 +136,7 @@ export default function Testimonials () {
     if (!isDown) return
     e.preventDefault()
     const x = e.pageX - scrollRef.current.offsetLeft
-    const walk = (x - startX) * 1 
+    const walk = (x - startX) * 1
     scrollRef.current.scrollLeft = scrollLeft - walk
   }
 
@@ -175,7 +172,7 @@ export default function Testimonials () {
                 onClick={() => setActiveTab(company)}
                 className={`tes__tab__parent transition cursor-pointer ${
                   activeTab === company
-                    ? 'bg-green-400 !text-white'
+                    ? 'bg-[#2AA169] !text-white'
                     : 'bg-green-100 text-gray-700 hover:bg-green-200'
                 }`}
               >
@@ -184,9 +181,7 @@ export default function Testimonials () {
                   alt={testimonial.name}
                   className='w-6 h-6 rounded-full border border-black/10'
                 />
-                <span className=' whitespace-nowrap'>
-                  {testimonial.name}
-                </span>
+                <span className=' whitespace-nowrap'>{testimonial.name}</span>
               </button>
             )
           })}
@@ -209,9 +204,7 @@ export default function Testimonials () {
                 className='size-10 p-1 rounded-full object-cover card__border'
               />
               <div>
-                <h4 className='sub__para'>
-                  {testimonials[activeTab].name}
-                </h4>
+                <h4 className='sub__para'>{testimonials[activeTab].name}</h4>
                 <p className='text-sm text-gray-600'>
                   {testimonials[activeTab].position}
                 </p>

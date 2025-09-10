@@ -1,8 +1,7 @@
-"use client"
+'use client'
 import React from 'react'
 import Tooltip from '../../utilities/Tooltip'
-import { FaTrophy } from "react-icons/fa6";
-
+import { FaTrophy } from 'react-icons/fa6'
 
 export default function CTA () {
   // Statistics data
@@ -41,25 +40,23 @@ export default function CTA () {
             icon={FaTrophy}
             text='Our Records'
             headerText='Our Awesome '
-            colorText = "Records"
+            colorText='Records'
             des='Discover our comprehensive financial services, expert investment strategies, and personalized wealth management solutions designed to help you achieve your financial goals and secure your future.'
           />
         </div>
 
-        
         <div>
           <div className='cta__card__parent'>
             {statsData.map(stat => (
-              <div key={stat.id} className='text-center text-white card__border p-5 rounded-md '>
+              <div
+                key={stat.id}
+                className='text-center text-white card__border p-5 rounded-md '
+              >
                 {/* Number */}
-                <div className='sub__title !text-green-400'>
-                  {stat.number}
-                </div>
+                <div className='sub__title !text-[#2AA169]'>{stat.number}</div>
 
                 {/* Title */}
-                <h3 className='base__para mb-2'>
-                  {stat.title}
-                </h3>
+                <h3 className='base__para mb-2'>{stat.title}</h3>
               </div>
             ))}
           </div>

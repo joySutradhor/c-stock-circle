@@ -33,7 +33,7 @@ export default function HeroBanner () {
             <div>
               <div className='flex gap-x-5 items-center my-10'>
                 <Link href='/about'>
-                  <button className='inline-flex items-center bg-blue-500 text-white gap-x-2 btn__style cursor-pointer group '>
+                  <button className='inline-flex items-center bg-[#4483b8] text-white gap-x-2 btn__style cursor-pointer group '>
                     Learn More
                     <span>
                       <IoArrowForwardSharp />
@@ -86,7 +86,7 @@ export default function HeroBanner () {
             <div className='absolute top-2/3 right-[5%] -translate-y-1/2'>
               <div className='backdrop-blur-md bg-white/10  shadow-xl rounded-2xl p-6 w-72 text-white'>
                 {/* Icon */}
-                {/* <div className='flex items-center justify-center w-12 h-12 rounded-full bg-green-400/50 text-white mb-4'>
+                {/* <div className='flex items-center justify-center w-12 h-12 rounded-full bg-[#2AA169]/50 text-white mb-4'>
                   <FaGraduationCap className='w-6 h-6' />
                 </div> */}
 
@@ -109,7 +109,7 @@ export default function HeroBanner () {
         </div>
       </div>
 
-      <div className='   bg-gradient-to-l from-green-300 via-blue-500 to-green-300'>
+      <div className='   bg-gradient-to-l from-green-300 via-[#4483b8] to-green-300'>
         <div className='text-white max-w-7xl mx-auto  py-5 '>
           <Marquee>
             1000+ Live Batches Completed • 50,000+ Students Trained • ACCA, FRM,

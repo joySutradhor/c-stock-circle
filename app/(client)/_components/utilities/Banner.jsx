@@ -36,10 +36,10 @@ export default function Banner ({
 
       {/* Banner Content */}
       <div className='relative z-20  max-w-7xl mx-auto h-[70vh] flex items-center'>
-        <div className='mt-[10vh]' >
+        <div className='mt-[10vh]'>
           <div className=''>
             {/* {Icon && (
-              <Icon className='banner__title !text-white bg-green-400 rounded-full p-1.5' />
+              <Icon className='banner__title !text-white bg-[#2AA169] rounded-full p-1.5' />
             )} */}
             <h1 className='banner__title text-center'>{text}</h1>
           </div>

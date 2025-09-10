@@ -90,8 +90,8 @@ export default function Page () {
                       href={cta.href}
                       className={`px-6 py-2 rounded-md text-sm font-medium flex gap-x-1.5 items-center ${
                         cta.type === 'primary'
-                          ? 'bg-green-400 text-white hover:bg-green-500'
-                          : 'hover:bg-green-400 hover:text-white transition text-white '
+                          ? 'bg-[#2AA169] text-white hover:bg-green-500'
+                          : 'hover:bg-[#2AA169] hover:text-white transition text-white '
                       }`}
                     >
                       {cta.label}
@@ -153,7 +153,7 @@ export default function Page () {
                   {/* Button */}
                   <button
                     type='submit'
-                    className='text-sm font-medium bg-green-400 text-white py-2 px-6 rounded-md '
+                    className='text-sm font-medium bg-[#2AA169] text-white py-2 px-6 rounded-md '
                   >
                     Send Message
                   </button>
@@ -189,11 +189,11 @@ export default function Page () {
                 {livePageData.programHighlights.items?.map((item, i) => (
                   <div
                     key={i}
-                    className='section_topSpace bg-white/5 hover:shadow-xl hover:border-green-400 transition  border border-black/10  rounded-md p-6 space-y-3 mx-2 group
+                    className='section_topSpace bg-white/5 hover:shadow-xl hover:border-[#2AA169] transition  border border-black/10  rounded-md p-6 space-y-3 mx-2 group
                       w-[400px]'
                   >
                     <IconWrapper
-                      className='text-black/60 border rounded-full border-green-100 p-0.5 group-hover:border-green-200 group-hover:text-green-400 transition text-3xl'
+                      className='text-black/60 border rounded-full border-green-100 p-0.5 group-hover:border-green-200 group-hover:text-[#2AA169] transition text-3xl'
                       Icon={item.icon}
                     />
                     <h3 className='small__title'>{item.title}</h3>
@@ -377,7 +377,7 @@ export default function Page () {
         </div>
 
         {/* Modeling Course Section */}
-        <div className='section__top'>
+        {/* <div className='section__top'>
           {livePageData.modelingCourse && (
             <section>
               <div className='max-w-xl '>
@@ -399,12 +399,12 @@ export default function Page () {
                     >
                       <IconWrapper
                         Icon={item.icon}
-                        className='mx-auto text-4xl text-green-400'
+                        className='mx-auto text-4xl text-[#2AA169]'
                       />
                       <h3 className='font-semibold text-xl'>{item.title}</h3>
                       <p className='text-gray-600'>{item.description}</p>
                       {item.metric && (
-                        <span className='block text-lg font-bold text-green-400'>
+                        <span className='block text-lg font-bold text-[#2AA169]'>
                           {item.metric}
                         </span>
                       )}
@@ -414,7 +414,7 @@ export default function Page () {
               )}
             </section>
           )}
-        </div>
+        </div> */}
 
         {/* FAQ Section */}
         {livePageData.faq && (

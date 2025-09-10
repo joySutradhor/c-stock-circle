@@ -51,9 +51,9 @@ export default function MissionVission () {
                 onClick={() => toggleItem(item.title)}
               >
                 {activeItem === item.title ? (
-                  <FaMinus className='text-base text-green-400' />
+                  <FaMinus className='text-base text-[#2AA169]' />
                 ) : (
-                  <FaPlus className='text-base text-green-400' />
+                  <FaPlus className='text-base text-[#2AA169]' />
                 )}
                 <span>{item.title}</span>
               </button>
