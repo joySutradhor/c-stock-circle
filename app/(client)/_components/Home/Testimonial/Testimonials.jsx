@@ -143,7 +143,7 @@ export default function Testimonials () {
   return (
     <div className=''>
       <div>
-        <div className='text-center max-w-3xl mx-auto'>
+        <div className='text-center max-w-3xl mx-auto '>
           <Tooltip
             icon={IoIosPeople}
             text='Testimonial'

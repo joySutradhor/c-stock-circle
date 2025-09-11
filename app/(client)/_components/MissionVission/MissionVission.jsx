@@ -31,7 +31,7 @@ export default function MissionVission () {
 
   return (
     <section>
-      <div className='text-center max-w-3xl mx-auto'>
+      <div className='text-center max-w-3xl mx-auto '>
         <Tooltip
           icon={AiOutlineAim}
           text='Mission'

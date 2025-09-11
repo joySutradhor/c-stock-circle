@@ -13,7 +13,7 @@ import BaseBtn from '../../utilities/BaseBtn'
 export default function OurCourses () {
   return (
     <section>
-      <div className='text-center max-w-3xl mx-auto'>
+      <div className='text-center max-w-3xl mx-auto '>
         <Tooltip
           icon={BsStack}
           text='Our courses'
@@ -72,9 +72,7 @@ export default function OurCourses () {
               <BaseBtn text='Join Now' icon={MdArrowOutward} />
             </div>
           </div>
-
         </div>
-
 
         <div className='hidden xl:block'>
           <Image

@@ -44,11 +44,11 @@
 }
 
 .sub__title {
-  @apply text-3xl xl:text-4xl text-black/70 font-bold;
+  @apply text-2xl xl:text-4xl text-black/70 font-bold;
 }
 
 .small__title {
-  @apply text-xl text-black/75 font-semibold;
+  @apply text-base lg:text-xl text-black/75 font-semibold;
 }
 
 .sub__para {

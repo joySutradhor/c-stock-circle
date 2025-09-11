@@ -166,7 +166,7 @@ const Footer = () => {
             </div>
           </div>
 
-          <h4 className='text-sm  text-right py-2 max-w-7xl mx-auto'>
+          <h4 className='text-sm  text-left mx-5 lg:text-right py-2 lg:max-w-7xl lg:mx-auto'>
             © {year}.{' '}
             <a href='https://www.ethicalden.com/' target='_blank'>
               <span className='font-semibold text-[#4483b8]'>Ethical Den</span>

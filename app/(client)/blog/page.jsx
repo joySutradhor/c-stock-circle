@@ -1,8 +1,9 @@
 "use client"
 import React from 'react'
 import Banner from '../_components/utilities/Banner'
-import MarketUpdate from '../_components/MarketUpdate/MarketUpdate'
+
 import { SlGraph } from 'react-icons/sl'
+import MarketUpdate from '../_components/MarketUpdate/MarketUpdate'
 
 export default function page () {
   return (

@@ -61,7 +61,7 @@ export default function Page () {
           <div className='absolute inset-0 bg-black/50 z-10' />
 
           {/* Hero + Form */}
-          <div className='section__gap grid grid-cols-2 gap-[10%] h-[60vh] items-center mt-[10vh] relative z-20'>
+          <div className='section__gap grid lg:grid-cols-2 gap-[10%] h-[70vh] xl:h-[60vh] items-center mt-[10vh] relative z-20'>
             {/* Hero Section */}
             {livePageData.heroBanner && (
               <section>
@@ -83,15 +83,15 @@ export default function Page () {
                   ))}
                 </ul>
 
-                <div className=' flex gap-x-5'>
+                <div className=' inline-flex md:flex-row flex-col gap-x-5'>
                   {livePageData.heroBanner.ctas?.map((cta, i) => (
                     <a
                       key={i}
                       href={cta.href}
-                      className={`px-6 py-2 rounded-md text-sm font-medium flex gap-x-1.5 items-center ${
+                      className={`px-6 py-2 my-2 lg:my-0 rounded-md text-sm font-medium inline-flex gap-x-1.5 gap-y-2.5 lg:gap-y-2.5 items-center ${
                         cta.type === 'primary'
                           ? 'bg-[#2AA169] text-white hover:bg-green-500'
-                          : 'hover:bg-[#2AA169] hover:text-white transition text-white '
+                          : 'bg-[#2AA169] lg:hover:bg-[#2AA169] lg:hover:text-white transition text-white '
                       }`}
                     >
                       {cta.label}
@@ -106,58 +106,60 @@ export default function Page () {
             )}
 
             {/* contact form */}
-            <div className='bg-white/20 backdrop-blur-2xl rounded-xl relative z-20'>
-              <div className='p-5 border border-white/10 rounded-xl'>
-                <form className='space-y-4'>
-                  {/* Row 1 */}
-                  <div className='grid grid-cols-1 sm:grid-cols-2 gap-4'>
-                    <input
-                      type='text'
-                      placeholder='Name'
-                      className='w-full border border-white/80 rounded text-white px-3 py-2 focus:outline-none '
-                    />
-                    <input
-                      type='email'
-                      placeholder='Email'
-                      className='w-full border border-white/80 rounded text-white px-3 py-2 focus:outline-none '
-                    />
-                  </div>
+            <div className='hidden lg:block'>
+              <div className='bg-white/20 backdrop-blur-2xl rounded-xl relative z-20 '>
+                <div className='p-5 border border-white/10 rounded-xl'>
+                  <form className='space-y-4'>
+                    {/* Row 1 */}
+                    <div className='grid grid-cols-1 sm:grid-cols-2 gap-4'>
+                      <input
+                        type='text'
+                        placeholder='Name'
+                        className='w-full border border-white/80 rounded text-white px-3 py-2 focus:outline-none '
+                      />
+                      <input
+                        type='email'
+                        placeholder='Email'
+                        className='w-full border border-white/80 rounded text-white px-3 py-2 focus:outline-none '
+                      />
+                    </div>
 
-                  {/* Row 2 */}
-                  <div className='grid grid-cols-1 sm:grid-cols-3 gap-4'>
-                    <select className='border border-white/80 text-white rounded px-3 py-2 focus:outline-none '>
-                      <option>India (+91)</option>
-                      <option>USA (+1)</option>
-                      <option>UK (+44)</option>
-                    </select>
-                    <input
-                      type='text'
-                      placeholder='Phone Number'
+                    {/* Row 2 */}
+                    <div className='grid grid-cols-1 sm:grid-cols-3 gap-4'>
+                      <select className='border border-white/80 text-white rounded px-3 py-2 focus:outline-none '>
+                        <option>India (+91)</option>
+                        <option>USA (+1)</option>
+                        <option>UK (+44)</option>
+                      </select>
+                      <input
+                        type='text'
+                        placeholder='Phone Number'
+                        className='w-full border border-white/80 rounded text-white px-3 py-2 focus:outline-none '
+                      />
+                      <select className='border border-white/80 rounded text-white px-3 py-2 focus:outline-none '>
+                        <option>Select Course</option>
+                        <option>CFA</option>
+                        <option>FRM</option>
+                        <option>ACCA</option>
+                      </select>
+                    </div>
+
+                    {/* Message */}
+                    <textarea
+                      rows='4'
+                      placeholder='Message'
                       className='w-full border border-white/80 rounded text-white px-3 py-2 focus:outline-none '
-                    />
-                    <select className='border border-white/80 rounded text-white px-3 py-2 focus:outline-none '>
-                      <option>Select Course</option>
-                      <option>CFA</option>
-                      <option>FRM</option>
-                      <option>ACCA</option>
-                    </select>
-                  </div>
+                    ></textarea>
 
-                  {/* Message */}
-                  <textarea
-                    rows='4'
-                    placeholder='Message'
-                    className='w-full border border-white/80 rounded text-white px-3 py-2 focus:outline-none '
-                  ></textarea>
-
-                  {/* Button */}
-                  <button
-                    type='submit'
-                    className='text-sm font-medium bg-[#2AA169] text-white py-2 px-6 rounded-md '
-                  >
-                    Send Message
-                  </button>
-                </form>
+                    {/* Button */}
+                    <button
+                      type='submit'
+                      className='text-sm font-medium bg-[#2AA169] text-white py-2 px-6 rounded-md '
+                    >
+                      Send Message
+                    </button>
+                  </form>
+                </div>
               </div>
             </div>
           </div>
@@ -169,7 +171,7 @@ export default function Page () {
         <div>
           {livePageData.programHighlights && (
             <section className='section__top'>
-              <div className='text-center max-w-3xl mx-auto'>
+              <div className='text-center max-w-3xl mx-auto '>
                 <Tooltip
                   icon={livePageData.programHighlights.icon}
                   text={livePageData.programHighlights.text}
@@ -190,7 +192,7 @@ export default function Page () {
                   <div
                     key={i}
                     className='section_topSpace bg-white/5 hover:shadow-xl hover:border-[#2AA169] transition  border border-black/10  rounded-md p-6 space-y-3 mx-2 group
-                      w-[400px]'
+                     w-[200px] lg:w-[350px] xl:w-[400px]'
                   >
                     <IconWrapper
                       className='text-black/60 border rounded-full border-green-100 p-0.5 group-hover:border-green-200 group-hover:text-[#2AA169] transition text-3xl'
@@ -208,7 +210,7 @@ export default function Page () {
         {/* course curriculam */}
 
         <div className='section__top'>
-          <div className='text-center max-w-3xl mx-auto'>
+          <div className='text-center max-w-3xl mx-auto '>
             <Tooltip
               icon={livePageData.curriculamData.icon}
               text={livePageData.curriculamData.text}
@@ -219,13 +221,13 @@ export default function Page () {
           </div>
 
           {/* faq area */}
-          <div className='grid grid-cols-2 gap-16 items-center section_topSpace'>
+          <div className='grid lg:grid-cols-2 gap-10 lg:gap-10 xl:gap-16 items-center section_topSpace'>
             {/* vidoes */}
             <div className='h-full w-full'>
               {/* video */}
 
               <iframe
-                className='h-full w-full rounded-xl'
+                className='h-[40vh] lg:h-full w-full rounded-xl'
                 src={livePageData.curriculamData.ytLink}
                 title='YouTube video player'
                 frameborder='0'
@@ -267,7 +269,7 @@ export default function Page () {
 
         {/* Exclusive Content Section */}
         <div className='section__top'>
-          <div className='text-center max-w-3xl mx-auto'>
+          <div className='text-center max-w-3xl mx-auto '>
             <Tooltip
               icon={livePageData.exclusiveContent.icon}
               text={livePageData.exclusiveContent.text}
@@ -279,7 +281,7 @@ export default function Page () {
           <div>
             {livePageData.exclusiveContent && (
               <section className=''>
-                <div className=' grid grid-cols-1 md:grid-cols-3 gap-x-8 section_topSpace'>
+                <div className=' grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-x-5  xl:gap-x-8 gap-y-5 lg:gap-y-0 section_topSpace'>
                   {livePageData.exclusiveContent.items?.map((item, i) => (
                     <div key={i} className=' card__border rounded-md p-5'>
                       <div className=''>
@@ -312,7 +314,7 @@ export default function Page () {
         <div className='section__top '>
           <div>
             {livePageData.whyUs && (
-              <section className='grid grid-cols-2 gap-14 '>
+              <section className='grid lg:grid-cols-2 gap-14 '>
                 <div>
                   <div>
                     <Tooltip
@@ -324,7 +326,7 @@ export default function Page () {
                     />
                   </div>
 
-                  <div className='mt-14'>
+                  <div className='mt-5 lg:mt-14'>
                     <BaseBtn
                       text='Join with Us'
                       icon={MdOutlineJoinFull}
@@ -333,11 +335,11 @@ export default function Page () {
                   </div>
                 </div>
 
-                <div className=' grid grid-cols-2  gap-5'>
+                <div className=' grid grid-cols-2 gap-3 lg:gap-5'>
                   {livePageData.whyUs.items?.map((item, i) => (
                     <div
                       key={i}
-                      className='bg-white shadow rounded-lg p-6  space-y-3'
+                      className='bg-white shadow rounded-lg lg:p-5 p-3  space-y-3'
                     >
                       {/* <div className='flex justify-center items-center'>
                       <IconWrapper className='' Icon={item.icon} />
@@ -355,7 +357,7 @@ export default function Page () {
         {/* industry recognized certification */}
 
         <div className='section__top'>
-          <div className='text-center max-w-3xl mx-auto'>
+          <div className='text-center max-w-3xl mx-auto '>
             <Tooltip
               icon={GrCertificate}
               text='Certificate'
@@ -419,7 +421,7 @@ export default function Page () {
         {/* FAQ Section */}
         {livePageData.faq && (
           <section className='section__top'>
-            <div className='text-center max-w-3xl mx-auto'>
+            <div className='text-center max-w-3xl mx-auto '>
               <Tooltip
                 icon={livePageData.faq.icon}
                 text={livePageData.faq.text}
@@ -434,16 +436,18 @@ export default function Page () {
                 <div key={i} className=' bg-gray-100 p-4 rounded-md'>
                   <button
                     onClick={() => toggleFAQ(i)}
-                    className='w-full flex justify-between items-center font-semibold text-left'
+                    className='w-full flex justify-between items-center font-semibold text-left text-black/80'
                   >
                     {faq.title}
-                    <span className='text-green-600 text-xl cursor-pointer'>
+                    <span className='text-green-600 text-xl cursor-pointer '>
                       {openIndex === i ? '-' : '+'}
                     </span>
                   </button>
 
                   {openIndex === i && (
-                    <p className='mt-2 text-gray-600'>{faq.description}</p>
+                    <p className='mt-2 text-gray-600 text-sm lg:text-base'>
+                      {faq.description}
+                    </p>
                   )}
                 </div>
               ))}

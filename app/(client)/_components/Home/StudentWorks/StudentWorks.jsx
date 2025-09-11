@@ -30,22 +30,26 @@ export default function StudentWorks () {
 
   return (
     <div>
-      <div className='text-center max-w-3xl mx-auto'>
+      <div className='text-center max-w-3xl mx-auto '>
         <Tooltip
           icon={PiStudentFill}
           text='Student Placement'
           headerText='Where our Students '
-          colorText="are placed?"
+          colorText='are placed?'
           des='Discover our comprehensive financial services, expert investment strategies, and personalized wealth management solutions designed to help you achieve your financial goals and secure your future.'
         />
       </div>
 
-      
-
       {/* two rows of marquee */}
       <div className='section_topSpace space-y-5 lg:space-y-8'>
         {/* Row 1 - scroll left */}
-        <Marquee direction='left' speed={40} gradient={true} gradientColor='#ffff' pauseOnHover={true}>
+        <Marquee
+          direction='left'
+          speed={40}
+          gradient={true}
+          gradientColor='#ffff'
+          pauseOnHover={true}
+        >
           {images.map((img, i) => (
             <div className='st__works__row__parent'>
               <img
@@ -59,7 +63,13 @@ export default function StudentWorks () {
         </Marquee>
 
         {/* Row 2 - scroll right */}
-        <Marquee direction='right' speed={40} gradient={true} gradientColor='#ffff' pauseOnHover={true}>
+        <Marquee
+          direction='right'
+          speed={40}
+          gradient={true}
+          gradientColor='#ffff'
+          pauseOnHover={true}
+        >
           {images.map((img, i) => (
             <div className='st__works__row__parent'>
               <img
