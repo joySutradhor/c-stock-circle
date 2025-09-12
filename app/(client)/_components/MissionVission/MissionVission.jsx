@@ -41,7 +41,7 @@ export default function MissionVission () {
         />
       </div>
 
-      <div className='grid grid-cols-2 gap-16 items-start section_topSpace'>
+      <div className='grid xl:grid-cols-2  gap-10 xl:gap-16 items-start section_topSpace'>
         {/* Left Side - Accordion */}
         <div className='space-y-5'>
           {features.map(item => (
@@ -69,7 +69,7 @@ export default function MissionVission () {
         </div>
 
         {/* Right Side - Static Images */}
-        <div className='grid grid-cols-2 gap-5 h-[500px]'>
+        <div className='grid grid-cols-2 gap-3 lg:gap-5 h-[500px]'>
           {/* Left Side - Full Height Image */}
           <div className='relative w-full h-full rounded-lg overflow-hidden'>
             <Image
@@ -81,7 +81,7 @@ export default function MissionVission () {
           </div>
 
           {/* Right Side - Two stacked images */}
-          <div className='flex flex-col gap-4 h-full'>
+          <div className='flex flex-col lg:gap-5 gap-3 h-full'>
             <div className='relative w-full h-1/2 rounded-lg overflow-hidden'>
               <Image
                 src='https://pub-338f0345bf6c431fbd5bd8d3f2174595.r2.dev/mission/one.jpg'

@@ -20,8 +20,8 @@ export default function HeroBanner () {
     <div>
       <Navbar />
 
-      <div className='section__gap mt-[10vh]'>
-        <div className='grid grid-cols-2 items-center gap-x-10 '>
+      <div className='section__gap mt-[20vh]  xl:mt-[10vh]'>
+        <div className='grid lg:grid-cols-2 items-center gap-x-10 '>
           <div>
             <HeroTooltip
               icon={FaUserGraduate}
@@ -51,7 +51,7 @@ export default function HeroBanner () {
               </div>
             </div>
 
-            <div className='flex items-center gap-10 '>
+            <div className='flex items-center gap-10 mb-16 xl:mb-0 '>
               <div className='flex items-center '>
                 {images.map((src, i) => (
                   <div key={i} className='-ml-3 first:ml-0'>
@@ -73,7 +73,7 @@ export default function HeroBanner () {
             </div>
           </div>
 
-          <div className='relative'>
+          <div className='relative hidden lg:block'>
             <div>
               <Image
                 height={1000}
