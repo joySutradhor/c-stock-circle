@@ -35,7 +35,7 @@ export default function Banner ({
       <div className='absolute inset-0 bg-black/50 z-10' />
 
       {/* Banner Content */}
-      <div className='relative z-20  max-w-7xl mx-auto h-[70vh] flex items-center'>
+      <div className='relative z-20  max-w-7xl mx-auto h-[70vh] flex items-center justify-center lg:justify-start'>
         <div className='mt-[10vh]'>
           <div className=''>
             {/* {Icon && (

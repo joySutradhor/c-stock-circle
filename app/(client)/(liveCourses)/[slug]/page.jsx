@@ -90,8 +90,8 @@ export default function Page () {
                       href={cta.href}
                       className={`px-6 py-2 my-2 lg:my-0 rounded-md text-sm font-medium inline-flex gap-x-1.5 gap-y-2.5 lg:gap-y-2.5 items-center ${
                         cta.type === 'primary'
-                          ? 'bg-[#2AA169] text-white hover:bg-green-500'
-                          : 'bg-[#2AA169] lg:hover:bg-[#2AA169] lg:hover:text-white transition text-white '
+                          ? 'bg-[#2AA169] text-white '
+                          : 'bg-[#2AA169]  lg:hover:text-white transition text-white '
                       }`}
                     >
                       {cta.label}
@@ -127,9 +127,9 @@ export default function Page () {
                     {/* Row 2 */}
                     <div className='grid grid-cols-1 sm:grid-cols-3 gap-4'>
                       <select className='border border-white/80 text-white rounded px-3 py-2 focus:outline-none '>
-                        <option>India (+91)</option>
-                        <option>USA (+1)</option>
-                        <option>UK (+44)</option>
+                        <option className='text-black/80 '>India (+91)</option>
+                        <option className='text-black/80 '>USA (+1)</option>
+                        <option className='text-black/80 '>UK (+44)</option>
                       </select>
                       <input
                         type='text'
@@ -137,10 +137,9 @@ export default function Page () {
                         className='w-full border border-white/80 rounded text-white px-3 py-2 focus:outline-none '
                       />
                       <select className='border border-white/80 rounded text-white px-3 py-2 focus:outline-none '>
-                        <option>Select Course</option>
-                        <option>CFA</option>
-                        <option>FRM</option>
-                        <option>ACCA</option>
+                        <option className='text-black/80 '>CFA</option>
+                        <option className='text-black/80 '>FRM</option>
+                        <option className='text-black/80 '>ACCA</option>
                       </select>
                     </div>
 
