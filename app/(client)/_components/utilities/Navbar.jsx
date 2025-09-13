@@ -33,7 +33,7 @@ export default function Navbar () {
 
   return (
     <div className='fixed top-0 w-full gradient__color z-50'>
-      <nav className='py-[2vh] max-w-7xl mx-auto flex justify-between items-center px-5 md:px-12 lg:px-16 xl:px-0'>
+      <nav className='py-[2vh] max-w-7xl mx-auto flex justify-between items-center px-5 md:px-10   lg:px-16 xl:px-0'>
         {/* Logo */}
         <Link href='/'>
           <div>
@@ -156,12 +156,12 @@ export default function Navbar () {
                         />
                       </button>
                       {openMenu === menu.name && (
-                        <ul className='bg-gray-50'>
+                        <ul >
                           {menu.subMenu.map(sub => (
                             <li key={sub.name}>
                               <Link
                                 href={sub.path}
-                                className={`block px-8 py-2 text-sm text-black/80 hover:text-green-600 ${
+                                className={`block py-2 text-sm text-black/80 hover:text-green-600 ${
                                   pathname === sub.path ? 'text-green-500' : ''
                                 }`}
                               >
