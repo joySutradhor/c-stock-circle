@@ -1,14 +1,33 @@
 'use client'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 import { MdArrowOutward } from 'react-icons/md'
 import Tooltip from '../utilities/Tooltip'
 import BaseBtn from '../utilities/BaseBtn'
-import { blogServiceData } from '@/app/(client)/_components/fakeDB/blogData'
 import { FaBlog } from 'react-icons/fa6'
+import axios from 'axios'
 
 // Component with mapped services
 const Blog = () => {
+
+  const [blogData, setBlogData] = useState([])
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(null)
+  useEffect(() => {
+    axios
+      .get('https://stockcircle.mrshakil.com/api/blogs/blog/') 
+      .then(res => {
+        setBlogData(res.data)
+        setLoading(false)
+      })
+      .catch(err => {
+        setError(err.message)
+        setLoading(false)
+      })
+  }, [])
+
+  console.log(blogData , "fetch data")
+
   return (
     <div>
       <div className='text-center max-w-3xl mx-auto '>
@@ -22,7 +41,7 @@ const Blog = () => {
       </div>
 
       <div className='blog__container section_topSpace'>
-        {blogServiceData?.map(service => (
+        {blogData?.map(service => (
           <div
             key={service.id}
             className='card__border  bg-white rounded-md  hover:shadow transition-shadow duration-300'
@@ -30,7 +49,7 @@ const Blog = () => {
             {/* Image */}
             <div className='relative  overflow-hidden  h-[30vh] w-full'>
               <Image
-                src={service.imgUrl}
+                src={service.thumbnail}
                 alt={service.title}
                 fill
                 className='object-cover rounded-t-md'
@@ -40,7 +59,7 @@ const Blog = () => {
             {/* Content */}
             <div className='p-3 md:p-6'>
               <h3 className='small__title mb-3 '>{service.title}</h3>
-              <p className='base__text mb-4'>{service.des}</p>
+              <p className='base__text mb-4'>{service.short_summary}</p>
 
               {/* CTA Button */}
 

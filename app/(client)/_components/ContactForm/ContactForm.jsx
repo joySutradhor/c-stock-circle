@@ -1,11 +1,45 @@
 'use client'
-import React from 'react'
+import React, { useState } from 'react'
 import BaseBtn from '../utilities/BaseBtn'
 import { MdArrowOutward } from 'react-icons/md'
+import toast, { Toaster } from 'react-hot-toast'
 
 export default function ContactForm () {
+  const initialState = {
+    name: '',
+    email: '',
+    country: 'India (+91)',
+    phone: '',
+    course: 'CFA',
+    message: ''
+  }
+
+  const [formData, setFormData] = useState(initialState)
+
+  // Handle input changes
+  const handleChange = e => {
+    const { name, value } = e.target
+    setFormData(prev => ({ ...prev, [name]: value }))
+  }
+
+  // Handle form submission
+  const handleSubmit = async e => {
+    e.preventDefault()
+    try {
+      // const res = await axios.post(
+      //   'https://your-api-endpoint.com/contact',
+      //   formData
+      // )
+      toast.success('Message sent successfully!')
+      setFormData(initialState)
+    } catch (err) {
+      console.error('Error sending message:', err)
+    }
+  }
+
   return (
     <section className='w-full section__top'>
+      <Toaster position='top-right' reverseOrder={false} />
       <div className='max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-5 md:gap-10 lg:gap-16 px-5 md:px-12 lg:px-16 xl:px-0'>
         {/* Left Content */}
         <div>
@@ -15,7 +49,7 @@ export default function ContactForm () {
             Fill in this form or send us an e-mail at{' '}
             <a
               href='mailto:info@stock.com'
-              className='text-[#2AA169] hover:underline'
+              className='text-blue-400 hover:underline'
             >
               info@stock.com
             </a>{' '}
@@ -28,7 +62,7 @@ export default function ContactForm () {
               <br />
               <a
                 href='tel:+917303381314'
-                className='text-green-600 hover:underline'
+                className='text-blue-400 hover:underline'
               >
                 +91-7303381314
               </a>
@@ -38,7 +72,7 @@ export default function ContactForm () {
                 Or you can visit in Delhi at:
               </span>
               <br />
-              <span className='text-green-600'>
+              <span className='text-blue-400'>
                 2/3, Block 2, West Patel Nagar, New Delhi – 110008
               </span>
             </p>
@@ -47,35 +81,53 @@ export default function ContactForm () {
 
         {/* Right Form */}
         <div className='bg-white rounded-lg shadow p-6'>
-          <form className='space-y-4'>
+          <form className='space-y-4' onSubmit={handleSubmit}>
             {/* Row 1 */}
             <div className='grid grid-cols-1 sm:grid-cols-2 gap-4'>
               <input
                 type='text'
+                name='name'
+                value={formData.name}
+                onChange={handleChange}
                 placeholder='Name'
-                className='w-full border border-[#2AA169] rounded px-3 py-2 focus:outline-none '
+                className='w-full border border-black/10 rounded px-3 py-2 focus:outline-none '
               />
               <input
                 type='email'
+                name='email'
+                value={formData.email}
+                onChange={handleChange}
                 placeholder='Email'
-                className='w-full border border-[#2AA169] rounded px-3 py-2 focus:outline-none '
+                className='w-full border border-black/10 rounded px-3 py-2 focus:outline-none '
               />
             </div>
 
             {/* Row 2 */}
             <div className='grid grid-cols-1 sm:grid-cols-3 gap-4'>
-              <select className='border border-[#2AA169] rounded px-3 py-2 focus:outline-none '>
+              <select
+                name='country'
+                value={formData.country}
+                onChange={handleChange}
+                className='border border-black/10 rounded px-3 py-2 focus:outline-none '
+              >
                 <option>India (+91)</option>
                 <option>USA (+1)</option>
                 <option>UK (+44)</option>
               </select>
               <input
                 type='text'
+                name='phone'
+                value={formData.phone}
+                onChange={handleChange}
                 placeholder='Phone Number'
-                className='w-full border border-[#2AA169] rounded px-3 py-2 focus:outline-none '
+                className='w-full border border-black/10 rounded px-3 py-2 focus:outline-none '
               />
-              <select className='border border-[#2AA169] rounded px-3 py-2 focus:outline-none '>
-                <option>Select Course</option>
+              <select
+                name='course'
+                value={formData.course}
+                onChange={handleChange}
+                className='border border-black/10 rounded px-3 py-2 focus:outline-none '
+              >
                 <option>CFA</option>
                 <option>FRM</option>
                 <option>ACCA</option>
@@ -84,15 +136,18 @@ export default function ContactForm () {
 
             {/* Message */}
             <textarea
+              name='message'
               rows='4'
+              value={formData.message}
+              onChange={handleChange}
               placeholder='Message'
-              className='w-full border border-[#2AA169] rounded px-3 py-2 focus:outline-none '
+              className='w-full border border-black/10 rounded px-3 py-2 focus:outline-none '
             ></textarea>
 
             {/* Button */}
             <button
               type='submit'
-              className='w-full bg-[#2AA169] text-white font-medium py-3 rounded hover:bg-green-600 transition'
+              className='w-full bg-blue-400 text-white font-medium py-3 rounded hover:bg-blue-500 transition cursor-pointer'
             >
               Send Message
             </button>

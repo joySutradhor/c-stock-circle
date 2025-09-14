@@ -1,5 +1,5 @@
 'use client'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useParams } from 'next/navigation'
 import Banner from '@/app/(client)/_components/utilities/Banner'
 import { blogServiceData } from '@/app/(client)/_components/fakeDB/blogData'
@@ -7,20 +7,30 @@ import Image from 'next/image'
 import { FaLongArrowAltLeft } from 'react-icons/fa'
 import Link from 'next/link'
 import { BsStack } from 'react-icons/bs'
+import axios from 'axios'
+import { FaUser } from 'react-icons/fa6'
+import { MdOutlineDateRange } from 'react-icons/md'
 
 export default function page () {
-  const { id } = useParams() 
+  const { id } = useParams()
 
-  // Find the service by id
-  const service = blogServiceData.find(item => item.id === Number(id))
+  const [blogData, setBlogData] = useState([])
+  const [loading, setLoading] = useState(true)
 
-  if (!service) {
-    return (
-      <div className='max-w-4xl mx-auto py-10 text-center'>
-        <h2 className='text-2xl font-bold'>Blog Not Found</h2>
-      </div>
-    )
-  }
+  useEffect(() => {
+    axios
+      .get(`https://stockcircle.mrshakil.com/api/blogs/blog/${id}`)
+      .then(res => {
+        setBlogData(res.data)
+        setLoading(false)
+      })
+      .catch(err => {
+        setError(err.message)
+        setLoading(false)
+      })
+  }, [])
+
+  console.log(blogData, 'fetch data')
 
   return (
     <div>
@@ -44,19 +54,36 @@ export default function page () {
           </Link>
         </div>
         {/* Image */}
-          <h1 className='text-3xl font-bold mb-10'>{service.title}</h1>
+        <div className='mb-10 space-y-3'>
+          <h1 className='text-3xl font-bold'>{blogData.title}</h1>
+
+          <div className='flex gap-x-4 text-gray-600'>
+            <p className='flex items-center gap-1'>
+              <FaUser className='text-blue-500' />
+              {blogData.writer}
+            </p>
+            <p className='flex items-center gap-1'>
+              <MdOutlineDateRange className='text-green-600' />
+              {new Date(blogData.created_at).toLocaleDateString()}
+            </p>
+          </div>
+        </div>
         <div className='relative h-[50vh] w-full mb-6'>
           <Image
-            src={service.imgUrl}
-            alt={service.title}
+            src={blogData.thumbnail}
+            alt={blogData.title}
             fill
             className='object-cover rounded-md'
           />
         </div>
 
-        {/* Title & Description */}
-        <p className='text-lg text-gray-600 mb-6'>{service.des}</p>
-        <p className='text-gray-800 leading-relaxed'>{service.longDes}</p>
+        <p className='text-lg text-gray-600 mb-6'>{blogData.short_summary}</p>
+
+        {/* Render HTML safely */}
+        <div
+          className='prose max-w-none text-gray-800 leading-relaxed'
+          dangerouslySetInnerHTML={{ __html: blogData.content }}
+        ></div>
       </div>
     </div>
   )

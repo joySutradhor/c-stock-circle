@@ -1,5 +1,5 @@
 'use client'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useParams } from 'next/navigation'
 import Banner from '@/app/(client)/_components/utilities/Banner'
 import { financialServices } from '@/app/(client)/_components/fakeDB/marketData'
@@ -8,14 +8,31 @@ import BaseBtn from '../../_components/utilities/BaseBtn'
 import { FaLongArrowAltLeft } from 'react-icons/fa'
 import Link from 'next/link'
 import { BsStack } from 'react-icons/bs'
+import axios from 'axios'
+import { FaUser } from 'react-icons/fa6'
+import { MdOutlineDateRange } from 'react-icons/md'
 
 export default function MarketUpdateDetails () {
-  const { id } = useParams() // Get dynamic id from URL
+  const { id } = useParams()
+  const [marketUpdateData, setMarketUpdateData] = useState([])
+  const [loading, setLoading] = useState(true)
 
-  // Find the service by id
-  const service = financialServices.find(item => item.id === Number(id))
+  useEffect(() => {
+    axios
+      .get(`https://stockcircle.mrshakil.com/api/markets/market-update/${id}`)
+      .then(res => {
+        setMarketUpdateData(res.data)
+        setLoading(false)
+      })
+      .catch(err => {
+        setError(err.message)
+        setLoading(false)
+      })
+  }, [])
 
-  if (!service) {
+  console.log(marketUpdateData, 'fetch data')
+
+  if (!marketUpdateData) {
     return (
       <div className='max-w-4xl mx-auto py-10 text-center'>
         <h2 className='text-2xl font-bold'>Service Not Found</h2>
@@ -44,20 +61,45 @@ export default function MarketUpdateDetails () {
             </button>
           </Link>
         </div>
+
+        <div className='mb-10 space-y-3'>
+          <h1 className='text-3xl font-bold'>{marketUpdateData.title}</h1>
+
+          <div className='flex gap-x-4 text-gray-600'>
+            <p className='flex items-center gap-1'>
+              <FaUser className='text-blue-500' />
+              {marketUpdateData.writer}
+            </p>
+            <p className='flex items-center gap-1'>
+              <MdOutlineDateRange className='text-green-600' />
+               { new Date (marketUpdateData.created_at).toLocaleDateString()}
+            </p>
+          </div>
+        </div>
+
         {/* Image */}
-        <div className='relative h-[50vh] w-full mb-6'>
+        <div className='relative h-[80vh] w-full mb-6'>
           <Image
-            src={service.imgUrl}
-            alt={service.title}
+            src={marketUpdateData.thumbnail}
+            alt={marketUpdateData.title}
             fill
             className='object-cover rounded-md'
           />
         </div>
 
         {/* Title & Description */}
-        <h1 className='text-3xl font-bold mb-4'>{service.title}</h1>
-        <p className='text-lg text-gray-600 mb-6'>{service.des}</p>
-        <p className='text-gray-800 leading-relaxed'>{service.longDes}</p>
+
+        <p className='text-lg text-gray-600 mb-6'>
+          {marketUpdateData.short_summary}
+        </p>
+
+        {/* If longDes is plain text, render normally */}
+
+        {/* Render HTML safely */}
+        <div
+          className='prose max-w-none text-gray-800 leading-relaxed'
+          dangerouslySetInnerHTML={{ __html: marketUpdateData.content }}
+        ></div>
       </div>
     </div>
   )

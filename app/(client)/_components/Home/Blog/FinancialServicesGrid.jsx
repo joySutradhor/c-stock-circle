@@ -1,35 +1,22 @@
 'use client'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 import { MdArrowOutward } from 'react-icons/md'
 import Tooltip from '../../utilities/Tooltip'
 import { SlGraph } from 'react-icons/sl'
 import BaseBtn from '../../utilities/BaseBtn'
+import axios from 'axios'
+import Link from 'next/link'
 
-// Services data
-export const financialServices = [
-  {
-    id: 1,
-    title: 'Investment Banking Program',
-    des: 'Master the fundamentals of investment banking with real-world case studies and industry expertise.',
-    imgUrl: 'https://pub-338f0345bf6c431fbd5bd8d3f2174595.r2.dev/page-banner/about.jpg'
-  },
-  {
-    id: 2,
-    title: 'Financial Modeling Course',
-    des: 'Build comprehensive financial models and valuation techniques used by top investment firms.',
-    imgUrl: 'https://pub-338f0345bf6c431fbd5bd8d3f2174595.r2.dev/page-banner/about.jpg'
-  },
-  {
-    id: 3,
-    title: 'Risk Management Strategies',
-    des: 'Learn advanced risk assessment and portfolio protection strategies from certified professionals.',
-    imgUrl: 'https://pub-338f0345bf6c431fbd5bd8d3f2174595.r2.dev/page-banner/about.jpg'
-  }
-]
-
-// Component with mapped services
 const FinancialServicesGrid = () => {
+  const [updates, setUpdates] = useState([])
+
+  useEffect(() => {
+    axios
+      .get('https://stockcircle.mrshakil.com/api/markets/market-update/')
+      .then(res => setUpdates(res.data.slice(0,3)))
+      .catch(err => console.error(err))
+  }, [])
   return (
     <div>
       <div className='text-center max-w-3xl mx-auto '>
@@ -42,10 +29,8 @@ const FinancialServicesGrid = () => {
         />
       </div>
 
-
-
       <div className='blog__container section_topSpace'>
-        {financialServices.map(service => (
+        {updates.map(service => (
           <div
             key={service.id}
             className='card__border  bg-white rounded-md  hover:shadow transition-shadow duration-300'
@@ -53,7 +38,7 @@ const FinancialServicesGrid = () => {
             {/* Image */}
             <div className='relative  overflow-hidden  h-[30vh] w-full'>
               <Image
-                src={service.imgUrl}
+                src={service.thumbnail}
                 alt={service.title}
                 fill
                 className='object-cover rounded-t-md'
@@ -63,15 +48,15 @@ const FinancialServicesGrid = () => {
             {/* Content */}
             <div className='p-3 md:p-6'>
               <h3 className='small__title mb-3 '>{service.title}</h3>
-              <p className='base__text mb-4'>{service.des}</p>
+              <p className='base__text mb-4'>{service.short_summary}</p>
 
               {/* CTA Button */}
 
               <div className='mt-5'>
                 <BaseBtn
                   text='Learn More'
+                  link={`/market-update/${service.id}`}
                   icon={MdArrowOutward}
-          
                 />
               </div>
             </div>
