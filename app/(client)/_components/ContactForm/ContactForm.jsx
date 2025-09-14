@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import BaseBtn from '../utilities/BaseBtn'
 import { MdArrowOutward } from 'react-icons/md'
 import toast, { Toaster } from 'react-hot-toast'
+import axios from 'axios'
 
 export default function ContactForm () {
   const initialState = {
@@ -25,15 +26,27 @@ export default function ContactForm () {
   // Handle form submission
   const handleSubmit = async e => {
     e.preventDefault()
+
+    // Map `phone` to `mobile` for API
+    const payload = {
+      name: formData.name,
+      email: formData.email,
+      mobile: formData.phone,
+      course: formData.course,
+      message: formData.message
+    }
+
     try {
-      // const res = await axios.post(
-      //   'https://your-api-endpoint.com/contact',
-      //   formData
-      // )
+      const res = await axios.post(
+        'https://stockcircle.mrshakil.com/api/contact/get-in-touch/',
+        payload
+      )
+      console.log('Response:', res.data)
       toast.success('Message sent successfully!')
-      setFormData(initialState)
+      setFormData(initialState) 
     } catch (err) {
       console.error('Error sending message:', err)
+      toast.error('Failed to send message.')
     }
   }
 
