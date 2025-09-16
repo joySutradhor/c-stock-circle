@@ -9,6 +9,7 @@ import Testimonials from '../_components/Home/Testimonial/Testimonials'
 import FinancialServicesGrid from '../_components/Home/Blog/FinancialServicesGrid'
 import About from '../_components/Home/About/About'
 import MissionVission from '../_components/MissionVission/MissionVission'
+import OurTeam from '../_components/OurTeam/OurTeam'
 
 export default function page () {
   return (
@@ -23,6 +24,9 @@ export default function page () {
       />
       <div className='section__gap section__top'>
         <About />
+      </div>
+      <div className='section__gap section__top'>
+        <OurTeam />
       </div>
       {/* <div className='section__gap section__top'>
         <MissionVission />
