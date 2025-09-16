@@ -13,7 +13,7 @@ export default function HeroTooltip ({
 }) {
   return (
     <div className={`${className} space-y-5`}>
-      <div>
+      {/* <div>
         <Link href={link || '#'}>
           <button className='inline-flex items-center gap-x-2 tooltip__btn__style cursor-pointer'>
             {Icon && <Icon className='text-base text-white' />}
@@ -24,7 +24,7 @@ export default function HeroTooltip ({
             )}
           </button>
         </Link>
-      </div>
+      </div> */}
 
       <div className='space-y-3'>
         {headerText && (

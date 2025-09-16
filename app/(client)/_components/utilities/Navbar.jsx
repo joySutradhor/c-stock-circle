@@ -23,8 +23,8 @@ export default function Navbar () {
       ]
     },
     { name: 'Market Updates', path: '/market-update' },
-    { name: 'About Us', path: '/about' },
-    { name: 'Blog', path: '/blog' }
+    { name: 'Blog', path: '/blog' },
+    { name: 'About Us', path: '/about' }
   ]
 
   const toggleMenu = name => {
@@ -137,7 +137,10 @@ export default function Navbar () {
             {menus.map(menu => {
               const isActive = pathname === menu.path
               return (
-                <li key={menu.name} className='border-b border-gray-200 px-5 md:px-12 lg:px-16 xl:px-0'>
+                <li
+                  key={menu.name}
+                  className='border-b border-gray-200 px-5 md:px-12 lg:px-16 xl:px-0'
+                >
                   {menu.subMenu ? (
                     <div>
                       <button
@@ -156,7 +159,7 @@ export default function Navbar () {
                         />
                       </button>
                       {openMenu === menu.name && (
-                        <ul >
+                        <ul>
                           {menu.subMenu.map(sub => (
                             <li key={sub.name}>
                               <Link

@@ -45,7 +45,7 @@ const Footer = () => {
                     media/SEO. However social media is a new way for companies
                   </p>
 
-                  <div className='footer__icons__parent'>
+                  {/* <div className='footer__icons__parent'>
                     <div>
                       <Image
                         src='https://pub-338f0345bf6c431fbd5bd8d3f2174595.r2.dev/footer/awebp.webp'
@@ -64,7 +64,7 @@ const Footer = () => {
                         className='object-cover '
                       />
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </div>
 
@@ -204,7 +204,7 @@ const Footer = () => {
                     className='flex items-center gap-x-3  text-black'
                   >
                     <FaWhatsapp className='text-lg text-gray-600' />
-                    <span className='sub__para'>WhatsApp Us</span>
+                    <span className='sub__para'>WhatsApp</span>
                   </a>
                 </div>
                 <div className='footer__icons__parent'>

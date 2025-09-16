@@ -24,18 +24,18 @@ export default function page () {
       <div className='section__gap section__top'>
         <About />
       </div>
-      <div className='section__gap section__top'>
+      {/* <div className='section__gap section__top'>
         <MissionVission />
-      </div>
+      </div> */}
       <div className='section__gap section__top'>
         <StudentWorks />
       </div>
       <div className=' section__top'>
         <CTA />
       </div>
-      <div className='section__gap section__top'>
+      {/* <div className='section__gap section__top'>
         <Testimonials />
-      </div>
+      </div> */}
     </div>
   )
 }

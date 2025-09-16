@@ -62,7 +62,7 @@ export default function ContactForm () {
             Fill in this form or send us an e-mail at{' '}
             <a
               href='mailto:info@stock.com'
-              className='text-blue-400 hover:underline'
+              className='text-[#4483B8] hover:underline'
             >
               info@stock.com
             </a>{' '}
@@ -75,7 +75,7 @@ export default function ContactForm () {
               <br />
               <a
                 href='tel:+917303381314'
-                className='text-blue-400 hover:underline'
+                className='text-[#4483B8] hover:underline'
               >
                 +91-7303381314
               </a>
@@ -85,7 +85,7 @@ export default function ContactForm () {
                 Or you can visit in Delhi at:
               </span>
               <br />
-              <span className='text-blue-400'>
+              <span className='text-[#4483B8]'>
                 2/3, Block 2, West Patel Nagar, New Delhi – 110008
               </span>
             </p>
@@ -160,7 +160,7 @@ export default function ContactForm () {
             {/* Button */}
             <button
               type='submit'
-              className='w-full bg-blue-400 text-white font-medium py-3 rounded hover:bg-blue-500 transition cursor-pointer'
+              className='w-full bg-[#4483B8] text-white font-medium py-3 rounded   cursor-pointer'
             >
               Send Message
             </button>

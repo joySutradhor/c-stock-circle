@@ -42,12 +42,7 @@ const coursePagesData = {
       bannerImg:
         'https://pub-338f0345bf6c431fbd5bd8d3f2174595.r2.dev/banner-photos/07.jpg',
       ctas: [
-        {
-          label: 'Join With Us',
-          href: '#',
-          type: 'primary',
-          icon: MdOutlineJoinFull
-        },
+      
         {
           label: 'Download Brochure',
           href: '#',
@@ -343,12 +338,7 @@ const coursePagesData = {
       bannerImg:
         'https://pub-338f0345bf6c431fbd5bd8d3f2174595.r2.dev/banner-photos/risk.jpg',
       ctas: [
-        {
-          label: 'Join With Us',
-          href: '#',
-          type: 'primary',
-          icon: MdOutlineJoinFull
-        },
+    
         {
           label: 'Download Brochure',
           href: '#',
@@ -611,12 +601,7 @@ const coursePagesData = {
       bannerImg:
         'https://pub-338f0345bf6c431fbd5bd8d3f2174595.r2.dev/banner-photos/144558.jpg',
       ctas: [
-        {
-          label: 'Join With Us',
-          href: '#',
-          type: 'primary',
-          icon: MdOutlineJoinFull
-        },
+     
         {
           label: 'Download Brochure',
           href: '#',

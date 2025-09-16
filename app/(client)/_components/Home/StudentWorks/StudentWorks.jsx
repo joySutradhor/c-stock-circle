@@ -1,7 +1,8 @@
 'use client'
 import React from 'react'
 import Tooltip from '../../utilities/Tooltip'
-import { PiStudentFill } from 'react-icons/pi'
+import { FaUserTie } from "react-icons/fa";
+
 import Marquee from 'react-fast-marquee'
 
 export default function StudentWorks () {
@@ -32,10 +33,10 @@ export default function StudentWorks () {
     <div>
       <div className='text-center max-w-3xl mx-auto '>
         <Tooltip
-          icon={PiStudentFill}
-          text='Student Placement'
-          headerText='Where our Students '
-          colorText='are placed?'
+          icon={FaUserTie}
+          text='Client Collaboration'
+          headerText='Collaborating with industry,  '
+          colorText=' with leaders'
           des='Discover our comprehensive financial services, expert investment strategies, and personalized wealth management solutions designed to help you achieve your financial goals and secure your future.'
         />
       </div>
