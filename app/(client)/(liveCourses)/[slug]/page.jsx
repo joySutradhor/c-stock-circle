@@ -267,7 +267,7 @@ export default function Page () {
         </div>
 
         {/* Exclusive Content Section */}
-        <div className='section__top'>
+        {/* <div className='section__top'>
           <div className='text-center max-w-3xl mx-auto '>
             <Tooltip
               icon={livePageData.exclusiveContent.icon}
@@ -294,7 +294,7 @@ export default function Page () {
                           />
                         </div>
                         <div className=' '>
-                          {/* <IconWrapper Icon={item.icon} /> */}
+                       
                           <h3 className='small__title mt-5 mb-2.5'>
                             {item.title}
                           </h3>
@@ -307,7 +307,7 @@ export default function Page () {
               </section>
             )}
           </div>
-        </div>
+        </div> */}
 
         {/* Why Us Section */}
         <div className='section__top '>

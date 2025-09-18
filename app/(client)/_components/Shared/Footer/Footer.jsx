@@ -88,16 +88,17 @@ const Footer = () => {
                       Blog
                     </Link>
                   </li>
-                  <li>
+                  {/* <li>
                     <Link href='/team' className='footer__para'>
                       Our Team
                     </Link>
-                  </li>
-                  <li>
-                    <Link href='/learning' className='footer__para'>
-                      Learning Portal
-                    </Link>
-                  </li>
+                  </li> */}
+                  {/* Disclaimer */}
+                  <p className='text-xs text-gray-500 mt-4'>
+                    <span className='text-red-500 font-medium'>Disclaimer </span> The information provided on this website is for
+                    general informational purposes only and may be subject to
+                    change.
+                  </p>
                 </ul>
               </div>
 
@@ -209,11 +210,11 @@ const Footer = () => {
                 </div>
                 <div className='footer__icons__parent'>
                   <FaInstagram className='text-gray-600 text-lg' />
-                  <span className='sub__para'>Instragram</span>
+                  <span className='sub__para'>Instagram</span>
                 </div>
                 <div className='footer__icons__parent'>
                   <FaLinkedin className='text-gray-600 text-lg' />
-                  <span className='sub__para'>Linkedin</span>
+                  <span className='sub__para'>LinkedIn</span>
                 </div>
               </div>
             </div>

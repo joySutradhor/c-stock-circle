@@ -23,7 +23,7 @@ export default function Navbar () {
       ]
     },
     { name: 'Market Updates', path: '/market-update' },
-    { name: 'Blog', path: '/blog' },
+    { name: 'Blogs', path: '/blog' },
     { name: 'About Us', path: '/about' }
   ]
 
