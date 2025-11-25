@@ -1,103 +1,103 @@
-'use client'
+"use client";
 
-import { coursePagesData } from '@/app/(client)/_components/fakeDB/pageData'
-import { useParams } from 'next/navigation'
-import React, { useState } from 'react'
-import Navbar from '../../_components/utilities/Navbar'
-import Tooltip from '../../_components/utilities/Tooltip'
-import Marquee from 'react-fast-marquee'
-import BaseBtn from '../../_components/utilities/BaseBtn'
-import { MdOutlineJoinFull } from 'react-icons/md'
-import Image from 'next/image'
+import { coursePagesData } from "@/app/(client)/_components/fakeDB/pageData";
+import { useParams } from "next/navigation";
+import React, { useState } from "react";
+import Navbar from "../../_components/utilities/Navbar";
+import Tooltip from "../../_components/utilities/Tooltip";
+import Marquee from "react-fast-marquee";
+import BaseBtn from "../../_components/utilities/BaseBtn";
+import { MdOutlineJoinFull } from "react-icons/md";
+import Image from "next/image";
 
-import { GrCertificate } from 'react-icons/gr'
+import { GrCertificate } from "react-icons/gr";
 
 const IconWrapper = ({ Icon, className }) =>
-  Icon ? <Icon className={className || 'text-3xl text-blue-600'} /> : null
+  Icon ? <Icon className={className || "text-3xl text-blue-600"} /> : null;
 
-export default function Page () {
-  const [openIndex, setOpenIndex] = useState(0)
-  const params = useParams()
-  const { slug } = params
+export default function Page() {
+  const [openIndex, setOpenIndex] = useState(0);
+  const params = useParams();
+  const { slug } = params;
 
-  const [openFaq, setOpenFaq] = useState(0)
+  const [openFaq, setOpenFaq] = useState(0);
 
-  const toggleCurriculamFAQ = index => {
-    setOpenFaq(openFaq === index ? -1 : index) // close if clicked again
-  }
+  const toggleCurriculamFAQ = (index) => {
+    setOpenFaq(openFaq === index ? -1 : index); // close if clicked again
+  };
 
   //   console.log(coursePagesData , slug)
 
   // Access page data using slug as key
   const livePageData = Object.values(coursePagesData).find(
-    item => item.slug === slug
-  )
+    (item) => item.slug === slug
+  );
 
-  const toggleFAQ = index => {
-    setOpenIndex(openIndex === index ? null : index)
-  }
+  const toggleFAQ = (index) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
 
-  console.log(livePageData, slug)
+  console.log(livePageData, slug);
 
   if (!livePageData) {
     return (
-      <div className='text-center py-10 text-red-600 font-bold'>
+      <div className="text-center py-10 text-red-600 font-bold">
         Page not found
       </div>
-    )
+    );
   }
 
   return (
-    <section className=''>
-      <div className='gradient__color'>
+    <section className="">
+      <div className="gradient__color">
         <Navbar />
         <div
-          className='bg-no-repeat bg-cover bg-center relative'
+          className="bg-no-repeat bg-cover bg-center relative"
           style={{
-            backgroundImage: `url(${livePageData.heroBanner.bannerImg})`
+            backgroundImage: `url(${livePageData.heroBanner.bannerImg})`,
           }}
         >
           {/* Overlay */}
-          <div className='absolute inset-0 bg-black/50 z-10' />
+          <div className="absolute inset-0 bg-black/50 z-10" />
 
           {/* Hero + Form */}
-          <div className='section__gap grid lg:grid-cols-2 gap-[10%] h-[70vh] xl:h-[60vh] items-center mt-[10vh] relative z-20'>
+          <div className="section__gap grid lg:grid-cols-2 gap-[10%] h-[70vh] xl:h-[60vh] items-center mt-[10vh] relative z-20">
             {/* Hero Section */}
             {livePageData.heroBanner && (
               <section>
-                <h1 className='sub__title !text-white'>
+                <h1 className="sub__title !text-white">
                   {livePageData.heroBanner.title}
                 </h1>
-                <p className='base__para !text-white mt-2.5'>
+                <p className="base__para !text-white mt-2.5">
                   {livePageData.heroBanner.subtitle}
                 </p>
 
-                <ul className='space-y-2.5 my-10 list-disc list-inside'>
+                <ul className="space-y-2.5 my-10 list-disc list-inside">
                   {livePageData.heroBanner.highlights?.map((highlight, i) => (
                     <li
                       key={i}
-                      className='base__para !text-white text-shadow-2xs'
+                      className="base__para !text-white text-shadow-2xs"
                     >
                       {highlight}
                     </li>
                   ))}
                 </ul>
 
-                <div className=' inline-flex md:flex-row flex-col gap-x-5'>
+                <div className=" inline-flex md:flex-row flex-col gap-x-5">
                   {livePageData.heroBanner.ctas?.map((cta, i) => (
                     <a
                       key={i}
                       href={cta.href}
                       className={`px-6 py-2 my-2 lg:my-0 rounded-md text-sm font-medium inline-flex gap-x-1.5 gap-y-2.5 lg:gap-y-2.5 items-center ${
-                        cta.type === 'primary'
-                          ? 'bg-[#2AA169] text-white '
-                          : 'bg-[#2AA169]  lg:hover:text-white transition text-white '
+                        cta.type === "primary"
+                          ? "bg-[#2AA169] text-white "
+                          : "bg-[#2AA169]  lg:hover:text-white transition text-white "
                       }`}
                     >
                       {cta.label}
                       <IconWrapper
                         Icon={cta.icon}
-                        className='mx-auto text-xl '
+                        className="mx-auto text-xl "
                       />
                     </a>
                   ))}
@@ -106,54 +106,69 @@ export default function Page () {
             )}
 
             {/* contact form */}
-            <div className='hidden lg:block'>
-              <div className='bg-white/20 backdrop-blur-2xl rounded-xl relative z-20 '>
-                <div className='p-5 border border-white/10 rounded-xl'>
-                  <form className='space-y-4'>
+            <div className="hidden lg:block">
+              <div className="bg-white/20 backdrop-blur-2xl rounded-xl relative z-20 ">
+                <div className="p-5 border border-white/10 rounded-xl">
+                  <form className="space-y-4">
                     {/* Row 1 */}
-                    <div className='grid grid-cols-1 sm:grid-cols-2 gap-4'>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <input
-                        type='text'
-                        placeholder='Name'
-                        className='w-full border border-white/80 rounded text-white px-3 py-2 focus:outline-none '
+                        type="text"
+                        placeholder="Name"
+                        className="w-full border border-white/80 rounded text-white px-3 py-2 focus:outline-none "
                       />
                       <input
-                        type='email'
-                        placeholder='Email'
-                        className='w-full border border-white/80 rounded text-white px-3 py-2 focus:outline-none '
+                        type="email"
+                        placeholder="Email"
+                        className="w-full border border-white/80 rounded text-white px-3 py-2 focus:outline-none "
                       />
                     </div>
 
                     {/* Row 2 */}
-                    <div className='grid grid-cols-1 sm:grid-cols-3 gap-4'>
-                      <select className='border border-white/80 text-white rounded px-3 py-2 focus:outline-none '>
-                        <option className='text-black/80 '>India (+91)</option>
-                        <option className='text-black/80 '>USA (+1)</option>
-                        <option className='text-black/80 '>UK (+44)</option>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <select className="border border-white/80 text-white rounded px-3 py-2 focus:outline-none ">
+                        <option className="text-black/80 ">India (+91)</option>
+                        <option className="text-black/80 ">USA (+1)</option>
+                        <option className="text-black/80 ">UK (+44)</option>
                       </select>
                       <input
-                        type='text'
-                        placeholder='Phone Number'
-                        className='w-full border border-white/80 rounded text-white px-3 py-2 focus:outline-none '
+                        type="text"
+                        placeholder="Phone Number"
+                        className="w-full border border-white/80 rounded text-white px-3 py-2 focus:outline-none "
                       />
-                      <select className='border border-white/80 rounded text-white px-3 py-2 focus:outline-none '>
-                        <option className='text-black/80 '>CFA</option>
-                        <option className='text-black/80 '>FRM</option>
-                        <option className='text-black/80 '>ACCA</option>
+                    </div>
+
+                    <div>
+                      <select className="border w-full border-white/80 rounded text-white px-3 py-2 focus:outline-none ">
+                        <option className="text-black/80 ">
+                          Basics of Technical Analysis
+                        </option>
+                        <option className="text-black/80 ">
+                          Basics of Fundamental Analysis
+                        </option>
+                        <option className="text-black/80 ">
+                          Basics of Derivatives Market
+                        </option>
+                        <option className="text-black/80 ">
+                          Techno - Funda Module
+                        </option>
+                        <option className="text-black/80 ">
+                          Personal Finance Program
+                        </option>
                       </select>
                     </div>
 
                     {/* Message */}
                     <textarea
-                      rows='4'
-                      placeholder='Message'
-                      className='w-full border border-white/80 rounded text-white px-3 py-2 focus:outline-none '
+                      rows="4"
+                      placeholder="Message"
+                      className="w-full border border-white/80 rounded text-white px-3 py-2 focus:outline-none "
                     ></textarea>
 
                     {/* Button */}
                     <button
-                      type='submit'
-                      className='text-sm font-medium bg-[#2AA169] text-white py-2 px-6 rounded-md '
+                      type="submit"
+                      className="text-sm font-medium bg-[#2AA169] text-white py-2 px-6 rounded-md "
                     >
                       Send Message
                     </button>
@@ -165,9 +180,9 @@ export default function Page () {
         </div>
       </div>
 
-      <div className='section__gap'>
+      <div className="section__gap">
         {/* Program Highlights Section */}
-        <div>
+        {/* <div>
           {livePageData.programHighlights && (
             <section className='section__top'>
               <div className='text-center max-w-3xl mx-auto '>
@@ -204,12 +219,12 @@ export default function Page () {
               </Marquee>
             </section>
           )}
-        </div>
+        </div> */}
 
         {/* course curriculam */}
 
-        <div className='section__top'>
-          <div className='text-center max-w-3xl mx-auto '>
+        <div className="section__top">
+          <div className="text-center max-w-3xl mx-auto ">
             <Tooltip
               icon={livePageData.curriculamData.icon}
               text={livePageData.curriculamData.text}
@@ -220,40 +235,40 @@ export default function Page () {
           </div>
 
           {/* faq area */}
-          <div className='grid lg:grid-cols-2 gap-10 lg:gap-10 xl:gap-16 items-center section_topSpace'>
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-10 xl:gap-16 items-center section_topSpace">
             {/* vidoes */}
-            <div className='h-full w-full'>
+            <div className="h-full w-full">
               {/* video */}
 
               <iframe
-                className='h-[40vh] lg:h-full w-full rounded-xl'
+                className="h-[40vh] lg:h-full w-full rounded-xl"
                 src={livePageData.curriculamData.ytLink}
-                title='YouTube video player'
-                frameborder='0'
-                allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
-                referrerpolicy='strict-origin-when-cross-origin'
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
                 allowfullscreen
               ></iframe>
             </div>
 
             <div>
-              <div className='h-[60vh] overflow-y-scroll  scrollbar-hide  space-y-4'>
+              <div className="h-[60vh] overflow-y-scroll  scrollbar-hide  space-y-4">
                 {livePageData.curriculamData.faqs?.map((faq, i) => (
-                  <div key={i} className=' bg-gray-100 p-4 rounded-md'>
+                  <div key={i} className=" bg-gray-100 p-4 rounded-md">
                     <button
                       onClick={() => toggleFAQ(i)}
                       className={`w-full flex justify-between items-center sub__para text-left ${
-                        openIndex === i ? 'mb-5' : 'mb-0'
+                        openIndex === i ? "mb-5" : "mb-0"
                       }`}
                     >
                       {faq.title}
-                      <span className='text-green-600 text-xl cursor-pointer'>
-                        {openIndex === i ? '-' : '+'}
+                      <span className="text-green-600 text-xl cursor-pointer">
+                        {openIndex === i ? "-" : "+"}
                       </span>
                     </button>
 
                     {openIndex === i && (
-                      <ul className='list-disc list-inside base__para space-y-1'>
+                      <ul className="list-disc list-inside base__para space-y-1">
                         {faq.answer.map((point, j) => (
                           <li key={j}>{point}</li>
                         ))}
@@ -310,10 +325,10 @@ export default function Page () {
         </div> */}
 
         {/* Why Us Section */}
-        <div className='section__top '>
+        <div className="section__top ">
           <div>
             {livePageData.whyUs && (
-              <section className='grid lg:grid-cols-2 gap-14 '>
+              <section className="grid lg:grid-cols-2 gap-14 ">
                 <div>
                   <div>
                     <Tooltip
@@ -325,26 +340,26 @@ export default function Page () {
                     />
                   </div>
 
-                  <div className='mt-5 lg:mt-14'>
+                  <div className="mt-5 lg:mt-14">
                     <BaseBtn
-                      text='Join with Us'
+                      text="Join with Us"
                       icon={MdOutlineJoinFull}
-                      link='/contact'
+                      link="/contact"
                     />
                   </div>
                 </div>
 
-                <div className=' grid grid-cols-2 gap-3 lg:gap-5'>
+                <div className=" grid grid-cols-2 gap-3 lg:gap-5">
                   {livePageData.whyUs.items?.map((item, i) => (
                     <div
                       key={i}
-                      className='bg-white shadow rounded-lg lg:p-5 p-3  space-y-3'
+                      className="bg-white shadow rounded-lg lg:p-5 p-3  space-y-3"
                     >
                       {/* <div className='flex justify-center items-center'>
                       <IconWrapper className='' Icon={item.icon} />
                     </div> */}
-                      <h3 className='small__title'>{item.title}</h3>
-                      <p className='base__para'>{item.description}</p>
+                      <h3 className="small__title">{item.title}</h3>
+                      <p className="base__para">{item.description}</p>
                     </div>
                   ))}
                 </div>
@@ -355,24 +370,24 @@ export default function Page () {
 
         {/* industry recognized certification */}
 
-        <div className='section__top'>
-          <div className='text-center max-w-3xl mx-auto '>
+        <div className="section__top">
+          <div className="text-center max-w-3xl mx-auto ">
             <Tooltip
               icon={GrCertificate}
-              text='Certificate'
-              headerText='Industry Recognized '
-              colorText='Certification'
-              des='This path was never easy. It was full of long hours, self-doubt, and setbacks, but it also taught me the most important lesson: trust the process.  With persistence, faith, and resilience, every effort eventually finds its reward.'
+              text="Certificate"
+              headerText="Industry Recognized "
+              colorText="Certification"
+              des="This path was never easy. It was full of long hours, self-doubt, and setbacks, but it also taught me the most important lesson: trust the process.  With persistence, faith, and resilience, every effort eventually finds its reward."
             />
           </div>
 
-          <div className='h-auto w-full section_topSpace'>
+          <div className="h-auto w-full section_topSpace">
             <Image
               height={800}
               width={800}
-              alt='certificate'
-              src='https://pub-338f0345bf6c431fbd5bd8d3f2174595.r2.dev/banner-photos/0.jpg'
-              className='h-full w-full object-cover rounded-xl'
+              alt="certificate"
+              src="https://pub-338f0345bf6c431fbd5bd8d3f2174595.r2.dev/banner-photos/0.jpg"
+              className="h-full w-full object-cover rounded-xl"
             />
           </div>
         </div>
@@ -419,8 +434,8 @@ export default function Page () {
 
         {/* FAQ Section */}
         {livePageData.faq && (
-          <section className='section__top'>
-            <div className='text-center max-w-3xl mx-auto '>
+          <section className="section__top">
+            <div className="text-center max-w-3xl mx-auto ">
               <Tooltip
                 icon={livePageData.faq.icon}
                 text={livePageData.faq.text}
@@ -430,21 +445,21 @@ export default function Page () {
               />
             </div>
 
-            <div className='section_topSpace space-y-4'>
+            <div className="section_topSpace space-y-4">
               {livePageData.faq.items?.map((faq, i) => (
-                <div key={i} className=' bg-gray-100 p-4 rounded-md'>
+                <div key={i} className=" bg-gray-100 p-4 rounded-md">
                   <button
                     onClick={() => toggleFAQ(i)}
-                    className='w-full flex justify-between items-center font-semibold text-left text-black/80'
+                    className="w-full flex justify-between items-center font-semibold text-left text-black/80"
                   >
                     {faq.title}
-                    <span className='text-green-600 text-xl cursor-pointer '>
-                      {openIndex === i ? '-' : '+'}
+                    <span className="text-green-600 text-xl cursor-pointer ">
+                      {openIndex === i ? "-" : "+"}
                     </span>
                   </button>
 
                   {openIndex === i && (
-                    <p className='mt-2 text-gray-600 text-sm lg:text-base'>
+                    <p className="mt-2 text-gray-600 text-sm lg:text-base">
                       {faq.description}
                     </p>
                   )}
@@ -455,5 +470,5 @@ export default function Page () {
         )}
       </div>
     </section>
-  )
+  );
 }

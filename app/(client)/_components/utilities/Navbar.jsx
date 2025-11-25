@@ -17,9 +17,11 @@ export default function Navbar () {
       name: 'Live Courses',
       path: '/live-courses',
       subMenu: [
-        { name: 'Investment Banking', path: '/investment-banking' },
-        { name: 'Financial Modeling', path: '/financial-modeling' },
-        { name: 'Risk Management', path: '/risk-management' }
+        { name: 'Basics of Technical Analysis', path: '/technical-analysis' },
+        { name: 'Basics of Fundamental Analysis', path: '/fundamental-analysis' },
+        { name: 'Basics of Derivatives Market', path: '/derivatives-market' },
+        { name: 'Techno - Funda Module', path: '/funda-Module' },
+        { name: 'Personal Finance Program', path: '/finance-Program' }
       ]
     },
     { name: 'Market Updates', path: '/market-update' },
@@ -56,11 +58,11 @@ export default function Navbar () {
                 const isActive = pathname === menu.path
                 return (
                   <li key={menu.name} className='relative font-medium text-sm'>
-                    <div>
+                    <div >
                       {menu.subMenu ? (
                         <button
                           onClick={() => toggleMenu(menu.name)}
-                          className={`flex items-center font-medium cursor-pointer gap-x-1 hover:text-green-500 transition-colors ${
+                          className={` flex items-center font-medium cursor-pointer gap-x-1 hover:text-green-500 transition-colors ${
                             openMenu === menu.name || isActive
                               ? 'text-green-500'
                               : 'text-black'
@@ -86,7 +88,7 @@ export default function Navbar () {
 
                       {/* Dropdown */}
                       {menu.subMenu && openMenu === menu.name && (
-                        <ul className='absolute top-full left-0 bg-white shadow-md rounded-md py-2 mt-3 w-48 z-50'>
+                        <ul className='absolute top-full left-0 bg-white shadow-md rounded-md py-2 mt-3 w-64 z-50'>
                           {menu.subMenu.map(sub => (
                             <li key={sub.name}>
                               <Link

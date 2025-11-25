@@ -1,67 +1,67 @@
-'use client'
-import React from 'react'
-import Tooltip from '../../utilities/Tooltip'
-import { FaTrophy } from 'react-icons/fa6'
+"use client";
+import React from "react";
+import Tooltip from "../../utilities/Tooltip";
+import { FaTrophy } from "react-icons/fa6";
 
-export default function CTA () {
+export default function CTA() {
   // Statistics data
   const statsData = [
     {
       id: 1,
-      number: '250+',
-      title: 'Past Recruiters',
-      description: 'Top companies trust our graduates'
+      number: "1850+",
+      title: "Students Trained",
+      description: "Empowering learners with industry-ready skills.",
     },
     {
       id: 2,
-      number: '4.8',
-      title: 'Average Rating',
-      description: 'Excellence in education delivery'
+      number: "4.7/5",
+      title: "Average Rating",
+      description: "Highly rated for quality teaching and support.",
     },
     {
       id: 3,
-      number: '98%',
-      title: 'Positive Feedback',
-      description: 'Student satisfaction guaranteed'
+      number: "350+",
+      title: "Batches Completed",
+      description: "Consistently delivering successful learning journeys.",
     },
     {
       id: 4,
-      number: '50000+',
-      title: 'Students Trained',
-      description: 'Successful careers launched'
-    }
-  ]
+      number: "10+",
+      title: "Years of Training & Mentorship",
+      description: "A decade of guiding learners toward growth.",
+    },
+  ];
 
   return (
-    <div className='gradient__color'>
-      <div className='cta__container'>
+    <div className="gradient__color">
+      <div className="cta__container">
         <div>
           <Tooltip
             icon={FaTrophy}
-            text='Our Records'
-            headerText='Our Awesome '
-            colorText='Records'
-            des='Discover our comprehensive financial services, expert investment strategies, and personalized wealth management solutions designed to help you achieve your financial goals and secure your future.'
+            text="Our Records"
+            headerText="From classroom to "
+            colorText=" closing bell"
+            des="Cohort completion, consistency stats, and case studies that map learning to results."
           />
         </div>
 
         <div>
-          <div className='cta__card__parent'>
-            {statsData.map(stat => (
+          <div className="cta__card__parent">
+            {statsData.map((stat) => (
               <div
                 key={stat.id}
-                className='text-center text-white card__border p-5 rounded-md '
+                className="text-center text-white card__border p-5 rounded-md "
               >
                 {/* Number */}
-                <div className='sub__title !text-[#2AA169]'>{stat.number}</div>
+                <div className="sub__title !text-[#2AA169]">{stat.number}</div>
 
                 {/* Title */}
-                <h3 className='base__para mb-2'>{stat.title}</h3>
+                <h3 className="base__para mb-2">{stat.title}</h3>
               </div>
             ))}
           </div>
         </div>
       </div>
     </div>
-  )
+  );
 }

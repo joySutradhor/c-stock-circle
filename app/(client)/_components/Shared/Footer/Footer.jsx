@@ -1,5 +1,5 @@
-import React from 'react'
-import Link from 'next/link'
+import React from "react";
+import Link from "next/link";
 import {
   FaInstagram,
   FaYoutube,
@@ -8,39 +8,39 @@ import {
   FaPhone,
   FaWhatsapp,
   FaEnvelope,
-  FaMapMarkerAlt
-} from 'react-icons/fa'
-import { FaLocationDot } from 'react-icons/fa6'
+  FaMapMarkerAlt,
+} from "react-icons/fa";
+import { FaLocationDot } from "react-icons/fa6";
 
-import { MdMarkEmailUnread } from 'react-icons/md'
+import { MdMarkEmailUnread } from "react-icons/md";
 
-import Image from 'next/image'
+import Image from "next/image";
 
 const Footer = () => {
-  const year = new Date().getFullYear()
+  const year = new Date().getFullYear();
   return (
     <section>
-      <footer className='footer__container footer__gradient__color'>
+      <footer className="footer__container footer__gradient__color">
         <div>
-          <div className='footer__parent'>
+          <div className="footer__parent">
             {/* Main Footer Content */}
-            <div className='footer__child__parent '>
+            <div className="footer__child__parent ">
               {/* c */}
-              <div className=''>
+              <div className="">
                 {/* Social Media and Copyright */}
-                <div className='space-y-5'>
+                <div className="space-y-5">
                   <div>
                     <div>
                       <Image
                         height={1000}
                         width={1000}
-                        alt='logo'
-                        src='https://pub-338f0345bf6c431fbd5bd8d3f2174595.r2.dev/stock-logo.png'
-                        className='object-cover w-48 h-auto  '
+                        alt="logo"
+                        src="https://pub-338f0345bf6c431fbd5bd8d3f2174595.r2.dev/stock-logo.png"
+                        className="object-cover w-48 h-auto  "
                       />
                     </div>
                   </div>
-                  <p className='base__para'>
+                  <p className="base__para">
                     Not all companies benefit the same amount from social
                     media/SEO. However social media is a new way for companies
                   </p>
@@ -70,21 +70,21 @@ const Footer = () => {
 
               {/* Column 1 - Useful Links */}
               <div>
-                <h3 className='footer__menu'>Useful Links</h3>
-                <ul className='space-y-2 md:space-y-2.5 lg:space-y-3'>
+                <h3 className="footer__menu">Useful Links</h3>
+                <ul className="space-y-2 md:space-y-2.5 lg:space-y-3">
                   <li>
-                    <Link href='/about' className='footer__para'>
+                    <Link href="/about" className="footer__para">
                       About
                     </Link>
                   </li>
                   <li>
-                    <Link href='/contact' className='footer__para'>
+                    <Link href="/contact" className="footer__para">
                       Contact
                     </Link>
                   </li>
 
                   <li>
-                    <Link href='/blog' className='footer__para'>
+                    <Link href="/blog" className="footer__para">
                       Blog
                     </Link>
                   </li>
@@ -94,47 +94,49 @@ const Footer = () => {
                     </Link>
                   </li> */}
                   {/* Disclaimer */}
-                  <p className='text-xs text-gray-500 mt-4'>
-                    <span className='text-red-500 font-medium'>Disclaimer </span> The information provided on this website is for
-                    general informational purposes only and may be subject to
-                    change.
+                  <p className="text-xs text-gray-500 mt-4">
+                    <span className="text-red-500 font-medium">
+                      Disclaimer{" "}
+                    </span>{" "}
+                    The information provided on this website is for general
+                    informational purposes only and may be subject to change.
                   </p>
                 </ul>
               </div>
 
               {/* Column 2 - Courses */}
               <div>
-                <h3 className='footer__menu'>Courses</h3>
-                <ul className='space-y-2 md:space-y-2.5 lg:space-y-3'>
+                <h3 className="footer__menu">Courses</h3>
+                <ul className="space-y-2 md:space-y-2.5 lg:space-y-3">
                   <li>
                     <Link
-                      href='/courses/investment-banking'
-                      className='footer__para'
+                      href="/technical-analysis"
+                      className="footer__para"
                     >
-                      Investment Banking Program
+                      Basics of technical analysis
                     </Link>
                   </li>
                   <li>
                     <Link
-                      href='/courses/financial-modeling'
-                      className='footer__para'
+                      href="/derivatives-market"
+                      className="footer__para"
                     >
-                      Financial Modeling Course
+                      Basics of Derivatives Market
                     </Link>
                   </li>
                   <li>
-                    <Link href='/courses/frm-prep' className='footer__para'>
-                      FRM Prep Course
+                    <Link href="/funda-Module" className="footer__para">
+                      Techno - funda module
                     </Link>
                   </li>
                   <li>
-                    <Link href='/courses/cfa-prep' className='footer__para'>
-                      CFA Prep Course
+                    <Link href="/fundamental-analysis" className="footer__para">
+                      Basics of Fundamental Analysis
                     </Link>
                   </li>
                   <li>
-                    <Link href='/courses/acca-prep' className='footer__para'>
-                      ACCA Prep Course
+                    <Link href="/finance-Program" className="footer__para">
+                     Personal Finance Program
                     </Link>
                   </li>
                 </ul>
@@ -142,23 +144,23 @@ const Footer = () => {
 
               {/* Column 3 - Reach Us */}
               <div>
-                <h3 className='footer__menu'>Reach Us</h3>
-                <div className='space-y-2 md:space-y-2.5 lg:space-y-3'>
-                  <div className='footer__last__col__icon__parent'>
-                    <FaPhone className='text-gray-600 text-lg' />
-                    <span className='footer__para'>+91-7303381314</span>
+                <h3 className="footer__menu">Reach Us</h3>
+                <div className="space-y-2 md:space-y-2.5 lg:space-y-3">
+                  <div className="footer__last__col__icon__parent">
+                    <FaPhone className="text-gray-600 text-lg" />
+                    <span className="footer__para">+91-7303381314</span>
                   </div>
-                  <div className='footer__last__col__icon__parent'>
-                    <FaWhatsapp className='text-gray-600 text-lg' />
-                    <span className='footer__para'>+91-5603381314</span>
+                  <div className="footer__last__col__icon__parent">
+                    <FaWhatsapp className="text-gray-600 text-lg" />
+                    <span className="footer__para">+91-5603381314</span>
                   </div>
-                  <div className='footer__last__col__icon__parent'>
-                    <FaEnvelope className='text-gray-600 text-lg' />
-                    <span className='footer__para'>info@xyz.com</span>
+                  <div className="footer__last__col__icon__parent">
+                    <FaEnvelope className="text-gray-600 text-lg" />
+                    <span className="footer__para">info@xyz.com</span>
                   </div>
-                  <div className='footer__last__col__icon__parent'>
-                    <FaLocationDot className='text-gray-600 text-xl ' />
-                    <span className='footer__para'>
+                  <div className="footer__last__col__icon__parent">
+                    <FaLocationDot className="text-gray-600 text-xl " />
+                    <span className="footer__para">
                       2/3, Block 2, West street, New Dhaka - 110008
                     </span>
                   </div>
@@ -167,54 +169,54 @@ const Footer = () => {
             </div>
           </div>
 
-          <h4 className='text-sm  text-left mx-5 lg:text-right py-2 lg:max-w-7xl lg:mx-auto'>
-            © {year}.{' '}
-            <a href='https://www.ethicalden.com/' target='_blank'>
-              <span className='font-semibold text-[#4483b8]'>Ethical Den</span>
-            </a>{' '}
+          <h4 className="text-sm  text-left mx-5 lg:text-right py-2 lg:max-w-7xl lg:mx-auto">
+            © {year}.{" "}
+            <a href="https://www.ethicalden.com/" target="_blank">
+              <span className="font-semibold text-[#4483b8]">Ethical Den</span>
+            </a>{" "}
             All rights reserved.
           </h4>
         </div>
       </footer>
 
       {/* fixed footer */}
-      <div className=''>
-        <div className='fixed bottom-0 w-full bg-green-100 z-50'>
-          <div className='max-w-7xl mx-auto  hidden xl:block  '>
-            <div className=' flex justify-between items-center py-2.5'>
-              <div className='fixed__footer__card_parent'>
+      <div className="">
+        <div className="fixed bottom-0 w-full bg-green-100 z-50">
+          <div className="max-w-7xl mx-auto  hidden xl:block  ">
+            <div className=" flex justify-between items-center py-2.5">
+              <div className="fixed__footer__card_parent">
                 {/* Phone Number Display */}
-                <div className='footer__icons__parent'>
-                  <FaPhone className='text-gray-600 text-lg' />
-                  <span className='sub__para'>+88015900-10592</span>
+                <div className="footer__icons__parent">
+                  <FaPhone className="text-gray-600 text-lg" />
+                  <span className="sub__para">+88015900-10592</span>
                 </div>
 
-                <div className='footer__icons__parent'>
-                  <MdMarkEmailUnread className='text-gray-600 text-lg' />
-                  <span className='sub__para'>info@gmail.com</span>
+                <div className="footer__icons__parent">
+                  <MdMarkEmailUnread className="text-gray-600 text-lg" />
+                  <span className="sub__para">info@gmail.com</span>
                 </div>
               </div>
 
-              <div className='fixed__footer__card_parent'>
+              <div className="fixed__footer__card_parent">
                 {/* WhatsApp Button */}
                 <div>
                   <a
                     href={`https://wa.me/917303381314`}
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    className='flex items-center gap-x-3  text-black'
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-x-3  text-black"
                   >
-                    <FaWhatsapp className='text-lg text-gray-600' />
-                    <span className='sub__para'>WhatsApp</span>
+                    <FaWhatsapp className="text-lg text-gray-600" />
+                    <span className="sub__para">WhatsApp</span>
                   </a>
                 </div>
-                <div className='footer__icons__parent'>
-                  <FaInstagram className='text-gray-600 text-lg' />
-                  <span className='sub__para'>Instagram</span>
+                <div className="footer__icons__parent">
+                  <FaInstagram className="text-gray-600 text-lg" />
+                  <span className="sub__para">Instagram</span>
                 </div>
-                <div className='footer__icons__parent'>
-                  <FaLinkedin className='text-gray-600 text-lg' />
-                  <span className='sub__para'>LinkedIn</span>
+                <div className="footer__icons__parent">
+                  <FaLinkedin className="text-gray-600 text-lg" />
+                  <span className="sub__para">LinkedIn</span>
                 </div>
               </div>
             </div>
@@ -222,7 +224,7 @@ const Footer = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;

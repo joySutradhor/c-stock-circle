@@ -34,7 +34,7 @@
   @apply border border-black/10;
 }
 .hero__title {
-  @apply text-4xl xl:text-6xl text-black/80  font-extrabold;
+  @apply text-4xl xl:text-5xl text-black/80  font-extrabold;
 }
 .main__title {
   @apply text-5xl xl:text-7xl text-black/80  font-extrabold;
@@ -94,11 +94,11 @@
 
 /* our courses  */
 .course__container {
-  @apply grid md:grid-cols-2 xl:grid-cols-3 items-center gap-5 xl:gap-10 h-full;
+  @apply grid md:grid-cols-2 xl:grid-cols-3 items-center gap-5 xl:gap-5 h-full;
 }
 
 .course__card__parent {
-  @apply p-6 rounded-md;
+  @apply p-6 rounded-md h-full;
 }
 
 .course__card__title {

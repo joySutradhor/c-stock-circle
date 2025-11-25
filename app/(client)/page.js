@@ -13,9 +13,9 @@ export default function Home () {
       <div>
         <HeroBanner />
       </div>
-      <div className='section__gap section__top'>
+      {/* <div className='section__gap section__top'>
         <About />
-      </div>
+      </div> */}
       <div className='section__gap section__top'>
         <OurCourses />
       </div>
