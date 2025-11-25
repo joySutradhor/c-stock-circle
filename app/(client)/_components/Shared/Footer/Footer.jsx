@@ -41,8 +41,9 @@ const Footer = () => {
                     </div>
                   </div>
                   <p className="base__para">
-                    Not all companies benefit the same amount from social
-                    media/SEO. However social media is a new way for companies
+                    Not all investors benefit the same way from trading
+                    strategies. However, learning the right techniques opens new
+                    opportunities to grow wealth in the stock market.
                   </p>
 
                   {/* <div className='footer__icons__parent'>
@@ -109,18 +110,12 @@ const Footer = () => {
                 <h3 className="footer__menu">Courses</h3>
                 <ul className="space-y-2 md:space-y-2.5 lg:space-y-3">
                   <li>
-                    <Link
-                      href="/technical-analysis"
-                      className="footer__para"
-                    >
+                    <Link href="/technical-analysis" className="footer__para">
                       Basics of technical analysis
                     </Link>
                   </li>
                   <li>
-                    <Link
-                      href="/derivatives-market"
-                      className="footer__para"
-                    >
+                    <Link href="/derivatives-market" className="footer__para">
                       Basics of Derivatives Market
                     </Link>
                   </li>
@@ -136,7 +131,7 @@ const Footer = () => {
                   </li>
                   <li>
                     <Link href="/finance-Program" className="footer__para">
-                     Personal Finance Program
+                      Personal Finance Program
                     </Link>
                   </li>
                 </ul>
